@@ -1,0 +1,4 @@
+/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles/engine.dir
+/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles/perft.dir
+/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles/edit_cache.dir
+/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles/rebuild_cache.dir
