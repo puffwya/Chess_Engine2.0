@@ -73,186 +73,259 @@ CMakeFiles/engine.dir/codegen:
 .PHONY : CMakeFiles/engine.dir/codegen
 
 CMakeFiles/engine.dir/engine/src/position.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/position.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/position.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp
 CMakeFiles/engine.dir/engine/src/position.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine/src/position.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/position.cpp.o -MF CMakeFiles/engine.dir/engine/src/position.cpp.o.d -o CMakeFiles/engine.dir/engine/src/position.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/position.cpp.o -MF CMakeFiles/engine.dir/engine/src/position.cpp.o.d -o CMakeFiles/engine.dir/engine/src/position.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp
 
 CMakeFiles/engine.dir/engine/src/position.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/position.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp > CMakeFiles/engine.dir/engine/src/position.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp > CMakeFiles/engine.dir/engine/src/position.cpp.i
 
 CMakeFiles/engine.dir/engine/src/position.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/position.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp -o CMakeFiles/engine.dir/engine/src/position.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp -o CMakeFiles/engine.dir/engine/src/position.cpp.s
 
 CMakeFiles/engine.dir/engine/src/move.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/move.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/move.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp
 CMakeFiles/engine.dir/engine/src/move.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/engine/src/move.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/move.cpp.o -MF CMakeFiles/engine.dir/engine/src/move.cpp.o.d -o CMakeFiles/engine.dir/engine/src/move.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/move.cpp.o -MF CMakeFiles/engine.dir/engine/src/move.cpp.o.d -o CMakeFiles/engine.dir/engine/src/move.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp
 
 CMakeFiles/engine.dir/engine/src/move.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/move.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp > CMakeFiles/engine.dir/engine/src/move.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp > CMakeFiles/engine.dir/engine/src/move.cpp.i
 
 CMakeFiles/engine.dir/engine/src/move.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/move.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp -o CMakeFiles/engine.dir/engine/src/move.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp -o CMakeFiles/engine.dir/engine/src/move.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp
 CMakeFiles/engine.dir/engine/src/movegen.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp > CMakeFiles/engine.dir/engine/src/movegen.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp > CMakeFiles/engine.dir/engine/src/movegen.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp -o CMakeFiles/engine.dir/engine/src/movegen.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp -o CMakeFiles/engine.dir/engine/src/movegen.cpp.s
 
 CMakeFiles/engine.dir/engine/src/attacks.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/attacks.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/attacks.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp
 CMakeFiles/engine.dir/engine/src/attacks.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/engine/src/attacks.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/attacks.cpp.o -MF CMakeFiles/engine.dir/engine/src/attacks.cpp.o.d -o CMakeFiles/engine.dir/engine/src/attacks.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/attacks.cpp.o -MF CMakeFiles/engine.dir/engine/src/attacks.cpp.o.d -o CMakeFiles/engine.dir/engine/src/attacks.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp
 
 CMakeFiles/engine.dir/engine/src/attacks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/attacks.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp > CMakeFiles/engine.dir/engine/src/attacks.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp > CMakeFiles/engine.dir/engine/src/attacks.cpp.i
 
 CMakeFiles/engine.dir/engine/src/attacks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/attacks.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp -o CMakeFiles/engine.dir/engine/src/attacks.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp -o CMakeFiles/engine.dir/engine/src/attacks.cpp.s
 
 CMakeFiles/engine.dir/engine/src/bitboard.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/bitboard.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/bitboard.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp
 CMakeFiles/engine.dir/engine/src/bitboard.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/engine/src/bitboard.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/bitboard.cpp.o -MF CMakeFiles/engine.dir/engine/src/bitboard.cpp.o.d -o CMakeFiles/engine.dir/engine/src/bitboard.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/bitboard.cpp.o -MF CMakeFiles/engine.dir/engine/src/bitboard.cpp.o.d -o CMakeFiles/engine.dir/engine/src/bitboard.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp
 
 CMakeFiles/engine.dir/engine/src/bitboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/bitboard.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp > CMakeFiles/engine.dir/engine/src/bitboard.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp > CMakeFiles/engine.dir/engine/src/bitboard.cpp.i
 
 CMakeFiles/engine.dir/engine/src/bitboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/bitboard.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp -o CMakeFiles/engine.dir/engine/src/bitboard.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp -o CMakeFiles/engine.dir/engine/src/bitboard.cpp.s
 
 CMakeFiles/engine.dir/engine/src/sliders.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/sliders.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/sliders.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp
 CMakeFiles/engine.dir/engine/src/sliders.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/engine/src/sliders.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/sliders.cpp.o -MF CMakeFiles/engine.dir/engine/src/sliders.cpp.o.d -o CMakeFiles/engine.dir/engine/src/sliders.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/sliders.cpp.o -MF CMakeFiles/engine.dir/engine/src/sliders.cpp.o.d -o CMakeFiles/engine.dir/engine/src/sliders.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp
 
 CMakeFiles/engine.dir/engine/src/sliders.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/sliders.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp > CMakeFiles/engine.dir/engine/src/sliders.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp > CMakeFiles/engine.dir/engine/src/sliders.cpp.i
 
 CMakeFiles/engine.dir/engine/src/sliders.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/sliders.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp -o CMakeFiles/engine.dir/engine/src/sliders.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp -o CMakeFiles/engine.dir/engine/src/sliders.cpp.s
 
 CMakeFiles/engine.dir/engine/src/legality.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/legality.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/legality.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp
 CMakeFiles/engine.dir/engine/src/legality.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/engine/src/legality.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/legality.cpp.o -MF CMakeFiles/engine.dir/engine/src/legality.cpp.o.d -o CMakeFiles/engine.dir/engine/src/legality.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/legality.cpp.o -MF CMakeFiles/engine.dir/engine/src/legality.cpp.o.d -o CMakeFiles/engine.dir/engine/src/legality.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp
 
 CMakeFiles/engine.dir/engine/src/legality.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/legality.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp > CMakeFiles/engine.dir/engine/src/legality.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp > CMakeFiles/engine.dir/engine/src/legality.cpp.i
 
 CMakeFiles/engine.dir/engine/src/legality.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/legality.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp -o CMakeFiles/engine.dir/engine/src/legality.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp -o CMakeFiles/engine.dir/engine/src/legality.cpp.s
+
+CMakeFiles/engine.dir/engine/src/position_init.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/position_init.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
+CMakeFiles/engine.dir/engine/src/position_init.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp
+CMakeFiles/engine.dir/engine/src/position_init.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/engine/src/position_init.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/position_init.cpp.o -MF CMakeFiles/engine.dir/engine/src/position_init.cpp.o.d -o CMakeFiles/engine.dir/engine/src/position_init.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp
+
+CMakeFiles/engine.dir/engine/src/position_init.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/position_init.cpp.i"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp > CMakeFiles/engine.dir/engine/src/position_init.cpp.i
+
+CMakeFiles/engine.dir/engine/src/position_init.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/position_init.cpp.s"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp -o CMakeFiles/engine.dir/engine/src/position_init.cpp.s
+
+CMakeFiles/engine.dir/engine/src/perft.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/perft.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
+CMakeFiles/engine.dir/engine/src/perft.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/perft.cpp
+CMakeFiles/engine.dir/engine/src/perft.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/engine/src/perft.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/perft.cpp.o -MF CMakeFiles/engine.dir/engine/src/perft.cpp.o.d -o CMakeFiles/engine.dir/engine/src/perft.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/perft.cpp
+
+CMakeFiles/engine.dir/engine/src/perft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/perft.cpp.i"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/perft.cpp > CMakeFiles/engine.dir/engine/src/perft.cpp.i
+
+CMakeFiles/engine.dir/engine/src/perft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/perft.cpp.s"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/perft.cpp -o CMakeFiles/engine.dir/engine/src/perft.cpp.s
+
+CMakeFiles/engine.dir/engine/src/makemove.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/makemove.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
+CMakeFiles/engine.dir/engine/src/makemove.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp
+CMakeFiles/engine.dir/engine/src/makemove.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/engine/src/makemove.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/makemove.cpp.o -MF CMakeFiles/engine.dir/engine/src/makemove.cpp.o.d -o CMakeFiles/engine.dir/engine/src/makemove.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp
+
+CMakeFiles/engine.dir/engine/src/makemove.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/makemove.cpp.i"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp > CMakeFiles/engine.dir/engine/src/makemove.cpp.i
+
+CMakeFiles/engine.dir/engine/src/makemove.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/makemove.cpp.s"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp -o CMakeFiles/engine.dir/engine/src/makemove.cpp.s
+
+CMakeFiles/engine.dir/engine/src/attack.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/attack.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
+CMakeFiles/engine.dir/engine/src/attack.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp
+CMakeFiles/engine.dir/engine/src/attack.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/engine/src/attack.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/attack.cpp.o -MF CMakeFiles/engine.dir/engine/src/attack.cpp.o.d -o CMakeFiles/engine.dir/engine/src/attack.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp
+
+CMakeFiles/engine.dir/engine/src/attack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/attack.cpp.i"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp > CMakeFiles/engine.dir/engine/src/attack.cpp.i
+
+CMakeFiles/engine.dir/engine/src/attack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/attack.cpp.s"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp -o CMakeFiles/engine.dir/engine/src/attack.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp
 CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp > CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp > CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp -o CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp -o CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp
 CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp > CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp > CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp -o CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp -o CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp
 CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp > CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp > CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp -o CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp -o CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp
 CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp > CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp > CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp -o CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp -o CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp
 CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp > CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp > CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp -o CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp -o CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.s
 
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: CMakeFiles/engine.dir/includes_CXX.rsp
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o -MF CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o.d -o CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp
 
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/src/movegen/king.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp > CMakeFiles/engine.dir/engine/src/movegen/king.cpp.i
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp > CMakeFiles/engine.dir/engine/src/movegen/king.cpp.i
 
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/src/movegen/king.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp -o CMakeFiles/engine.dir/engine/src/movegen/king.cpp.s
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp -o CMakeFiles/engine.dir/engine/src/movegen/king.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
@@ -263,6 +336,10 @@ engine_OBJECTS = \
 "CMakeFiles/engine.dir/engine/src/bitboard.cpp.o" \
 "CMakeFiles/engine.dir/engine/src/sliders.cpp.o" \
 "CMakeFiles/engine.dir/engine/src/legality.cpp.o" \
+"CMakeFiles/engine.dir/engine/src/position_init.cpp.o" \
+"CMakeFiles/engine.dir/engine/src/perft.cpp.o" \
+"CMakeFiles/engine.dir/engine/src/makemove.cpp.o" \
+"CMakeFiles/engine.dir/engine/src/attack.cpp.o" \
 "CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o" \
 "CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o" \
 "CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o" \
@@ -280,6 +357,10 @@ libengine.a: CMakeFiles/engine.dir/engine/src/attacks.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/bitboard.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/sliders.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/legality.cpp.o
+libengine.a: CMakeFiles/engine.dir/engine/src/position_init.cpp.o
+libengine.a: CMakeFiles/engine.dir/engine/src/perft.cpp.o
+libengine.a: CMakeFiles/engine.dir/engine/src/makemove.cpp.o
+libengine.a: CMakeFiles/engine.dir/engine/src/attack.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o
@@ -288,7 +369,7 @@ libengine.a: CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o
 libengine.a: CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o
 libengine.a: CMakeFiles/engine.dir/build.make
 libengine.a: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libengine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libengine.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/engine.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 

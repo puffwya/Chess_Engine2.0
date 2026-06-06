@@ -3,6 +3,7 @@
 #include "move.h"
 #include "bitboard.h"
 #include "sliders.h"
+#include "movegen/rook.h"
 
 // rook directions (orthogonal rays)
 static const Direction rookDirs[4] = {

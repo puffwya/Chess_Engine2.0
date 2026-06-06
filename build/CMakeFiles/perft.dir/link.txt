@@ -1,1 +1,1 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/perft.dir/tests/perft.cpp.o -o perft  libengine.a
+/Users/wyattpuff/emsdk/upstream/emscripten/em++ @CMakeFiles/perft.dir/objects1.rsp -o perft.js @CMakeFiles/perft.dir/linkLibs.rsp

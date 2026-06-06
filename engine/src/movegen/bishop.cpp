@@ -3,6 +3,7 @@
 #include "move.h"
 #include "bitboard.h"
 #include "sliders.h"
+#include "movegen/bishop.h"
 
 // Bishop directions (diagonals)
 static const Direction bishopDirs[4] = {

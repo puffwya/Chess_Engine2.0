@@ -8,9 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp" "CMakeFiles/engine.dir/engine/src/attack.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/attack.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp" "CMakeFiles/engine.dir/engine/src/attacks.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/attacks.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp" "CMakeFiles/engine.dir/engine/src/bitboard.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/bitboard.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/legality.cpp" "CMakeFiles/engine.dir/engine/src/legality.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/legality.cpp.o.d"
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp" "CMakeFiles/engine.dir/engine/src/makemove.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/makemove.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/move.cpp" "CMakeFiles/engine.dir/engine/src/move.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/move.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp" "CMakeFiles/engine.dir/engine/src/movegen.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/movegen.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp" "CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o.d"
@@ -19,7 +21,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp" "CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp" "CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp" "CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o.d"
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/perft.cpp" "CMakeFiles/engine.dir/engine/src/perft.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/perft.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp" "CMakeFiles/engine.dir/engine/src/position.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/position.cpp.o.d"
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp" "CMakeFiles/engine.dir/engine/src/position_init.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/position_init.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp" "CMakeFiles/engine.dir/engine/src/sliders.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/src/sliders.cpp.o.d"
   )
 

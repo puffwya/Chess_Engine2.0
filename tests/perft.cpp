@@ -1,22 +1,15 @@
-#include <iostream>
-#include <vector>
 #include "position.h"
-#include "movegen.h"
+#include "position_init.h"
+#include "perft.h"
+#include <iostream>
 
 int main()
 {
-    Position pos{};
+    Position pos = PositionInit::startpos();
 
-    pos.whitePawns = 0x000000000000FF00ULL;
-    pos.blackPawns = 0x00FF000000000000ULL;
-    pos.sideToMove = WHITE;
+    std::cout << "Perft divide depth 2:\n";
 
-    std::vector<Move> moves;
+    Perft::perftDivide(pos, 2);
 
-    MoveGenerator::generateMoves(pos, moves);
-
-    std::cout << "Moves: " << moves.size() << "\n";
-
-    for (auto& m : moves)
-        std::cout << (int)m.from << " -> " << (int)m.to << "\n";
+    return 0;
 }

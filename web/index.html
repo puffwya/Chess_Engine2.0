@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            width: 400px;
+        }
+
+        .sq {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .light { background: #eee; }
+        .dark { background: #600; color: white; }
+    </style>
+</head>
+<body>
+
+<div id="board"></div>
+
+<script src="chess_wasm.js"></script>
+<script>
+let module;
+
+let selected = -1;
+
+createModule().then(m => {
+    module = m;
+
+    module._initPosition();
+
+    renderBoard();
+});
+
+function pieceToLetter(piece) {
+    switch (piece) {
+        case 1: return "P";
+        case 2: return "N";
+        case 3: return "B";
+        case 4: return "R";
+        case 5: return "Q";
+        case 6: return "K";
+
+        case -1: return "p";
+        case -2: return "n";
+        case -3: return "b";
+        case -4: return "r";
+        case -5: return "q";
+        case -6: return "k";
+
+        default: return "";
+    }
+}
+
+function renderBoard() {
+    const boardDiv = document.getElementById("board");
+    boardDiv.innerHTML = "";
+
+    for (let i = 0; i < 64; i++) {
+        const sq = document.createElement("div");
+
+        sq.className =
+            "sq " + ((Math.floor(i / 8) + i) % 2 ? "dark" : "light");
+
+        const piece = module._getPiece(i);
+
+        sq.innerText = pieceToLetter(piece);
+
+        // highlight selected square
+        if (i === selected) {
+            sq.style.outline = "2px solid yellow";
+        }
+
+        sq.onclick = () => onSquare(i);
+
+        boardDiv.appendChild(sq);
+    }
+}
+
+function onSquare(i) {
+    if (selected === -1) {
+        // first click = select
+        const moveCount = module._selectSquare(i);
+        console.log("legal moves:", moveCount);
+
+        selected = i;
+        renderBoard();
+        return;
+    }
+
+    // second click = attempt move
+    module._makeMove(selected, i);
+
+    selected = -1;
+
+    renderBoard();
+}
+</script>
+
+</body>
+</html>

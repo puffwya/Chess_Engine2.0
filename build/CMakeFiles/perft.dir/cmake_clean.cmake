@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/perft.dir/tests/perft.cpp.o"
   "CMakeFiles/perft.dir/tests/perft.cpp.o.d"
-  "perft"
+  "perft.js"
   "perft.pdb"
 )
 

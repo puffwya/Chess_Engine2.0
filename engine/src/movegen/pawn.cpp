@@ -2,18 +2,13 @@
 #include "position.h"
 #include "move.h"
 #include "bitboard.h"
-
-static const Bitboard FILE_A = 0x0101010101010101ULL;
-static const Bitboard FILE_H = 0x8080808080808080ULL;
+#include "movegen/pawn.h"
 
 void generateWhitePawnMoves(const Position& pos, std::vector<Move>& moves)
 {
     Bitboard pawns = pos.whitePawns;
 
-    Bitboard empty = ~(pos.whitePawns | pos.whiteKnights | pos.whiteBishops |
-                       pos.whiteRooks | pos.whiteQueens | pos.whiteKing |
-                       pos.blackPawns | pos.blackKnights | pos.blackBishops |
-                       pos.blackRooks | pos.blackQueens | pos.blackKing);
+    Bitboard empty = ~(pos.whitePieces() | pos.blackPieces());
 
     Bitboard p = pawns;
 
@@ -22,12 +17,33 @@ void generateWhitePawnMoves(const Position& pos, std::vector<Move>& moves)
         int from = bb::popLSB(p);
         Bitboard fromBB = 1ULL << from;
 
+        // -------------------------
+        // single push
+        // -------------------------
         Bitboard one = (fromBB << 8) & empty;
 
         if (one)
         {
             int to = bb::lsb(one);
             moves.push_back({(uint8_t)from, (uint8_t)to, QUIET, 0});
+
+            // -------------------------
+            // double push (ONLY from rank 2)
+            // rank 2 = squares 8–15
+            // -------------------------
+            if (from / 8 == 1)
+            {
+                Bitboard two = (fromBB << 16) & empty;
+
+                // IMPORTANT: also ensure intermediate square is empty
+                Bitboard between = (fromBB << 8);
+
+                if (two && (between & empty))
+                {
+                    int to2 = bb::lsb(two);
+                    moves.push_back({(uint8_t)from, (uint8_t)to2, QUIET, 0});
+                }
+            }
         }
     }
 }
@@ -36,10 +52,7 @@ void generateBlackPawnMoves(const Position& pos, std::vector<Move>& moves)
 {
     Bitboard pawns = pos.blackPawns;
 
-    Bitboard empty = ~(pos.whitePawns | pos.whiteKnights | pos.whiteBishops |
-                       pos.whiteRooks | pos.whiteQueens | pos.whiteKing |
-                       pos.blackPawns | pos.blackKnights | pos.blackBishops |
-                       pos.blackRooks | pos.blackQueens | pos.blackKing);
+    Bitboard empty = ~(pos.whitePieces() | pos.blackPieces());
 
     Bitboard p = pawns;
 
@@ -48,12 +61,31 @@ void generateBlackPawnMoves(const Position& pos, std::vector<Move>& moves)
         int from = bb::popLSB(p);
         Bitboard fromBB = 1ULL << from;
 
+        // -------------------------
+        // single push
+        // -------------------------
         Bitboard one = (fromBB >> 8) & empty;
 
         if (one)
         {
             int to = bb::lsb(one);
             moves.push_back({(uint8_t)from, (uint8_t)to, QUIET, 0});
+
+            // -------------------------
+            // double push (ONLY from rank 7)
+            // -------------------------
+            if (from / 8 == 6)
+            {
+                Bitboard two = (fromBB >> 16) & empty;
+
+                Bitboard between = (fromBB >> 8);
+
+                if (two && (between & empty))
+                {
+                    int to2 = bb::lsb(two);
+                    moves.push_back({(uint8_t)from, (uint8_t)to2, QUIET, 0});
+                }
+            }
         }
     }
 }

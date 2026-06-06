@@ -2,6 +2,7 @@
 #include "position.h"
 #include "move.h"
 #include "attacks.h"
+#include "movegen/knight.h"
 
 void generateWhiteKnightMoves(const Position& pos, std::vector<Move>& moves)
 {

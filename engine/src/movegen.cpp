@@ -1,24 +1,10 @@
 #include "movegen.h"
-#include "movegen/pawn.cpp"
-#include "movegen/knight.cpp"
-
-void generateWhitePawnMoves(const Position&, std::vector<Move>&);
-void generateBlackPawnMoves(const Position&, std::vector<Move>&);
-
-void generateWhiteKnightMoves(const Position&, std::vector<Move>&);
-void generateBlackKnightMoves(const Position&, std::vector<Move>&);
-
-void generateWhiteBishopMoves(const Position&, std::vector<Move>&);
-void generateBlackBishopMoves(const Position&, std::vector<Move>&);
-
-void generateWhiteRookMoves(const Position&, std::vector<Move>&);
-void generateBlackRookMoves(const Position&, std::vector<Move>&);
-
-void generateWhiteQueenMoves(const Position&, std::vector<Move>&);
-void generateBlackQueenMoves(const Position&, std::vector<Move>&);
-
-void generateWhiteKingMoves(const Position&, std::vector<Move>&);
-void generateBlackKingMoves(const Position&, std::vector<Move>&);
+#include "movegen/pawn.h"
+#include "movegen/knight.h"
+#include "movegen/bishop.h"
+#include "movegen/rook.h"
+#include "movegen/queen.h"
+#include "movegen/king.h"
 
 void MoveGenerator::generateMoves(const Position& pos, std::vector<Move>& moves)
 {

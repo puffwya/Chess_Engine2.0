@@ -1,10 +1,9 @@
+#include "attack.h"
 #include "legality.h"
 #include "movegen.h"
 #include "sliders.h"
 
 // forward (you already effectively have this logic via sliders)
-static bool squareAttacked(const Position& pos, int sq, Color bySide);
-static void makeMoveInternal(Position& pos, const Move& move);
 static void undoMoveInternal(Position& pos, const Move& move, uint8_t captured);
 
 bool Legality::isKingInCheck(const Position& pos, Color side)
@@ -13,14 +12,12 @@ bool Legality::isKingInCheck(const Position& pos, Color side)
         ? bb::lsb(pos.whiteKing)
         : bb::lsb(pos.blackKing);
 
-    return squareAttacked(pos, kingSq, side == WHITE ? BLACK : WHITE);
+    return Attack::isSquareAttacked(pos, kingSq, side == WHITE ? BLACK : WHITE);
 }
 
 bool Legality::isMoveLegal(const Position& pos, const Move& move)
 {
     Position copy = pos;
-
-    makeMoveInternal(copy, move);
 
     Color us = pos.sideToMove;
 

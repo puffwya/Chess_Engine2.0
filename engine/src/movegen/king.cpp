@@ -2,6 +2,7 @@
 #include "attacks.h"
 #include "position.h"
 #include "bitboard.h"
+#include "movegen/king.h"
 
 void generateWhiteKingMoves(const Position& pos, std::vector<Move>& moves)
 {

@@ -3,6 +3,7 @@
 #include "move.h"
 #include "bitboard.h"
 #include "sliders.h"
+#include "movegen/queen.h"
 
 // combine rook + bishop directions
 

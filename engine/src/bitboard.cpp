@@ -1,27 +1,29 @@
 #include "bitboard.h"
 #include <iostream>
 
-int bb::popLSB(Bitboard& b)
+namespace bb
 {
-    int sq = __builtin_ctzll(b);
-    b &= b - 1;
-    return sq;
-}
-
-int bb::lsb(Bitboard b)
-{
-    return __builtin_ctzll(b);
-}
-
-void bb::print(Bitboard b)
-{
-    for (int r = 7; r >= 0; r--)
+    int lsb(Bitboard b)
     {
-        for (int f = 0; f < 8; f++)
+        return __builtin_ctzll(b);
+    }
+
+    int popLSB(Bitboard& b)
+    {
+        int sq = __builtin_ctzll(b);
+        b &= (b - 1);
+        return sq;
+    }
+
+    void print(Bitboard b)
+    {
+        for (int r = 7; r >= 0; r--)
         {
-            int sq = r * 8 + f;
-            std::cout << ((b >> sq) & 1);
+            for (int f = 0; f < 8; f++)
+            {
+                std::cout << ((b >> (r * 8 + f)) & 1);
+            }
+            std::cout << "\n";
         }
-        std::cout << "\n";
     }
 }

@@ -142,12 +142,50 @@ perft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/perft.dir/build.make CMakeFiles/perft.dir/build
 .PHONY : perft/fast
 
+#=============================================================================
+# Target rules for targets named chess_wasm
+
+# Build rule for target.
+chess_wasm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chess_wasm
+.PHONY : chess_wasm
+
+# fast build rule for target.
+chess_wasm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/build
+.PHONY : chess_wasm/fast
+
+engine/src/attack.o: engine/src/attack.cpp.o
+.PHONY : engine/src/attack.o
+
+# target to build an object file
+engine/src/attack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.o
+.PHONY : engine/src/attack.cpp.o
+
+engine/src/attack.i: engine/src/attack.cpp.i
+.PHONY : engine/src/attack.i
+
+# target to preprocess a source file
+engine/src/attack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.i
+.PHONY : engine/src/attack.cpp.i
+
+engine/src/attack.s: engine/src/attack.cpp.s
+.PHONY : engine/src/attack.s
+
+# target to generate assembly for a file
+engine/src/attack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.s
+.PHONY : engine/src/attack.cpp.s
+
 engine/src/attacks.o: engine/src/attacks.cpp.o
 .PHONY : engine/src/attacks.o
 
 # target to build an object file
 engine/src/attacks.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attacks.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o
 .PHONY : engine/src/attacks.cpp.o
 
 engine/src/attacks.i: engine/src/attacks.cpp.i
@@ -156,6 +194,7 @@ engine/src/attacks.i: engine/src/attacks.cpp.i
 # target to preprocess a source file
 engine/src/attacks.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attacks.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.i
 .PHONY : engine/src/attacks.cpp.i
 
 engine/src/attacks.s: engine/src/attacks.cpp.s
@@ -164,6 +203,7 @@ engine/src/attacks.s: engine/src/attacks.cpp.s
 # target to generate assembly for a file
 engine/src/attacks.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attacks.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.s
 .PHONY : engine/src/attacks.cpp.s
 
 engine/src/bitboard.o: engine/src/bitboard.cpp.o
@@ -172,6 +212,7 @@ engine/src/bitboard.o: engine/src/bitboard.cpp.o
 # target to build an object file
 engine/src/bitboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/bitboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o
 .PHONY : engine/src/bitboard.cpp.o
 
 engine/src/bitboard.i: engine/src/bitboard.cpp.i
@@ -180,6 +221,7 @@ engine/src/bitboard.i: engine/src/bitboard.cpp.i
 # target to preprocess a source file
 engine/src/bitboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/bitboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.i
 .PHONY : engine/src/bitboard.cpp.i
 
 engine/src/bitboard.s: engine/src/bitboard.cpp.s
@@ -188,6 +230,7 @@ engine/src/bitboard.s: engine/src/bitboard.cpp.s
 # target to generate assembly for a file
 engine/src/bitboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/bitboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.s
 .PHONY : engine/src/bitboard.cpp.s
 
 engine/src/legality.o: engine/src/legality.cpp.o
@@ -213,6 +256,33 @@ engine/src/legality.s: engine/src/legality.cpp.s
 engine/src/legality.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/legality.cpp.s
 .PHONY : engine/src/legality.cpp.s
+
+engine/src/makemove.o: engine/src/makemove.cpp.o
+.PHONY : engine/src/makemove.o
+
+# target to build an object file
+engine/src/makemove.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/makemove.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o
+.PHONY : engine/src/makemove.cpp.o
+
+engine/src/makemove.i: engine/src/makemove.cpp.i
+.PHONY : engine/src/makemove.i
+
+# target to preprocess a source file
+engine/src/makemove.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/makemove.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.i
+.PHONY : engine/src/makemove.cpp.i
+
+engine/src/makemove.s: engine/src/makemove.cpp.s
+.PHONY : engine/src/makemove.s
+
+# target to generate assembly for a file
+engine/src/makemove.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/makemove.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.s
+.PHONY : engine/src/makemove.cpp.s
 
 engine/src/move.o: engine/src/move.cpp.o
 .PHONY : engine/src/move.o
@@ -244,6 +314,7 @@ engine/src/movegen.o: engine/src/movegen.cpp.o
 # target to build an object file
 engine/src/movegen.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen.cpp.o
 .PHONY : engine/src/movegen.cpp.o
 
 engine/src/movegen.i: engine/src/movegen.cpp.i
@@ -252,6 +323,7 @@ engine/src/movegen.i: engine/src/movegen.cpp.i
 # target to preprocess a source file
 engine/src/movegen.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen.cpp.i
 .PHONY : engine/src/movegen.cpp.i
 
 engine/src/movegen.s: engine/src/movegen.cpp.s
@@ -260,6 +332,7 @@ engine/src/movegen.s: engine/src/movegen.cpp.s
 # target to generate assembly for a file
 engine/src/movegen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen.cpp.s
 .PHONY : engine/src/movegen.cpp.s
 
 engine/src/movegen/bishop.o: engine/src/movegen/bishop.cpp.o
@@ -268,6 +341,7 @@ engine/src/movegen/bishop.o: engine/src/movegen/bishop.cpp.o
 # target to build an object file
 engine/src/movegen/bishop.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o
 .PHONY : engine/src/movegen/bishop.cpp.o
 
 engine/src/movegen/bishop.i: engine/src/movegen/bishop.cpp.i
@@ -276,6 +350,7 @@ engine/src/movegen/bishop.i: engine/src/movegen/bishop.cpp.i
 # target to preprocess a source file
 engine/src/movegen/bishop.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.i
 .PHONY : engine/src/movegen/bishop.cpp.i
 
 engine/src/movegen/bishop.s: engine/src/movegen/bishop.cpp.s
@@ -284,6 +359,7 @@ engine/src/movegen/bishop.s: engine/src/movegen/bishop.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/bishop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.s
 .PHONY : engine/src/movegen/bishop.cpp.s
 
 engine/src/movegen/king.o: engine/src/movegen/king.cpp.o
@@ -292,6 +368,7 @@ engine/src/movegen/king.o: engine/src/movegen/king.cpp.o
 # target to build an object file
 engine/src/movegen/king.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o
 .PHONY : engine/src/movegen/king.cpp.o
 
 engine/src/movegen/king.i: engine/src/movegen/king.cpp.i
@@ -300,6 +377,7 @@ engine/src/movegen/king.i: engine/src/movegen/king.cpp.i
 # target to preprocess a source file
 engine/src/movegen/king.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/king.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.i
 .PHONY : engine/src/movegen/king.cpp.i
 
 engine/src/movegen/king.s: engine/src/movegen/king.cpp.s
@@ -308,6 +386,7 @@ engine/src/movegen/king.s: engine/src/movegen/king.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/king.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/king.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.s
 .PHONY : engine/src/movegen/king.cpp.s
 
 engine/src/movegen/knight.o: engine/src/movegen/knight.cpp.o
@@ -316,6 +395,7 @@ engine/src/movegen/knight.o: engine/src/movegen/knight.cpp.o
 # target to build an object file
 engine/src/movegen/knight.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o
 .PHONY : engine/src/movegen/knight.cpp.o
 
 engine/src/movegen/knight.i: engine/src/movegen/knight.cpp.i
@@ -324,6 +404,7 @@ engine/src/movegen/knight.i: engine/src/movegen/knight.cpp.i
 # target to preprocess a source file
 engine/src/movegen/knight.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.i
 .PHONY : engine/src/movegen/knight.cpp.i
 
 engine/src/movegen/knight.s: engine/src/movegen/knight.cpp.s
@@ -332,6 +413,7 @@ engine/src/movegen/knight.s: engine/src/movegen/knight.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/knight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/knight.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.s
 .PHONY : engine/src/movegen/knight.cpp.s
 
 engine/src/movegen/pawn.o: engine/src/movegen/pawn.cpp.o
@@ -340,6 +422,7 @@ engine/src/movegen/pawn.o: engine/src/movegen/pawn.cpp.o
 # target to build an object file
 engine/src/movegen/pawn.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o
 .PHONY : engine/src/movegen/pawn.cpp.o
 
 engine/src/movegen/pawn.i: engine/src/movegen/pawn.cpp.i
@@ -348,6 +431,7 @@ engine/src/movegen/pawn.i: engine/src/movegen/pawn.cpp.i
 # target to preprocess a source file
 engine/src/movegen/pawn.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.i
 .PHONY : engine/src/movegen/pawn.cpp.i
 
 engine/src/movegen/pawn.s: engine/src/movegen/pawn.cpp.s
@@ -356,6 +440,7 @@ engine/src/movegen/pawn.s: engine/src/movegen/pawn.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/pawn.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/pawn.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.s
 .PHONY : engine/src/movegen/pawn.cpp.s
 
 engine/src/movegen/queen.o: engine/src/movegen/queen.cpp.o
@@ -364,6 +449,7 @@ engine/src/movegen/queen.o: engine/src/movegen/queen.cpp.o
 # target to build an object file
 engine/src/movegen/queen.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o
 .PHONY : engine/src/movegen/queen.cpp.o
 
 engine/src/movegen/queen.i: engine/src/movegen/queen.cpp.i
@@ -372,6 +458,7 @@ engine/src/movegen/queen.i: engine/src/movegen/queen.cpp.i
 # target to preprocess a source file
 engine/src/movegen/queen.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.i
 .PHONY : engine/src/movegen/queen.cpp.i
 
 engine/src/movegen/queen.s: engine/src/movegen/queen.cpp.s
@@ -380,6 +467,7 @@ engine/src/movegen/queen.s: engine/src/movegen/queen.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/queen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/queen.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.s
 .PHONY : engine/src/movegen/queen.cpp.s
 
 engine/src/movegen/rook.o: engine/src/movegen/rook.cpp.o
@@ -388,6 +476,7 @@ engine/src/movegen/rook.o: engine/src/movegen/rook.cpp.o
 # target to build an object file
 engine/src/movegen/rook.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o
 .PHONY : engine/src/movegen/rook.cpp.o
 
 engine/src/movegen/rook.i: engine/src/movegen/rook.cpp.i
@@ -396,6 +485,7 @@ engine/src/movegen/rook.i: engine/src/movegen/rook.cpp.i
 # target to preprocess a source file
 engine/src/movegen/rook.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.i
 .PHONY : engine/src/movegen/rook.cpp.i
 
 engine/src/movegen/rook.s: engine/src/movegen/rook.cpp.s
@@ -404,7 +494,32 @@ engine/src/movegen/rook.s: engine/src/movegen/rook.cpp.s
 # target to generate assembly for a file
 engine/src/movegen/rook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/movegen/rook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.s
 .PHONY : engine/src/movegen/rook.cpp.s
+
+engine/src/perft.o: engine/src/perft.cpp.o
+.PHONY : engine/src/perft.o
+
+# target to build an object file
+engine/src/perft.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/perft.cpp.o
+.PHONY : engine/src/perft.cpp.o
+
+engine/src/perft.i: engine/src/perft.cpp.i
+.PHONY : engine/src/perft.i
+
+# target to preprocess a source file
+engine/src/perft.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/perft.cpp.i
+.PHONY : engine/src/perft.cpp.i
+
+engine/src/perft.s: engine/src/perft.cpp.s
+.PHONY : engine/src/perft.s
+
+# target to generate assembly for a file
+engine/src/perft.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/perft.cpp.s
+.PHONY : engine/src/perft.cpp.s
 
 engine/src/position.o: engine/src/position.cpp.o
 .PHONY : engine/src/position.o
@@ -412,6 +527,7 @@ engine/src/position.o: engine/src/position.cpp.o
 # target to build an object file
 engine/src/position.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position.cpp.o
 .PHONY : engine/src/position.cpp.o
 
 engine/src/position.i: engine/src/position.cpp.i
@@ -420,6 +536,7 @@ engine/src/position.i: engine/src/position.cpp.i
 # target to preprocess a source file
 engine/src/position.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position.cpp.i
 .PHONY : engine/src/position.cpp.i
 
 engine/src/position.s: engine/src/position.cpp.s
@@ -428,7 +545,35 @@ engine/src/position.s: engine/src/position.cpp.s
 # target to generate assembly for a file
 engine/src/position.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position.cpp.s
 .PHONY : engine/src/position.cpp.s
+
+engine/src/position_init.o: engine/src/position_init.cpp.o
+.PHONY : engine/src/position_init.o
+
+# target to build an object file
+engine/src/position_init.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position_init.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.o
+.PHONY : engine/src/position_init.cpp.o
+
+engine/src/position_init.i: engine/src/position_init.cpp.i
+.PHONY : engine/src/position_init.i
+
+# target to preprocess a source file
+engine/src/position_init.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position_init.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.i
+.PHONY : engine/src/position_init.cpp.i
+
+engine/src/position_init.s: engine/src/position_init.cpp.s
+.PHONY : engine/src/position_init.s
+
+# target to generate assembly for a file
+engine/src/position_init.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/position_init.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.s
+.PHONY : engine/src/position_init.cpp.s
 
 engine/src/sliders.o: engine/src/sliders.cpp.o
 .PHONY : engine/src/sliders.o
@@ -436,6 +581,7 @@ engine/src/sliders.o: engine/src/sliders.cpp.o
 # target to build an object file
 engine/src/sliders.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/sliders.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o
 .PHONY : engine/src/sliders.cpp.o
 
 engine/src/sliders.i: engine/src/sliders.cpp.i
@@ -444,6 +590,7 @@ engine/src/sliders.i: engine/src/sliders.cpp.i
 # target to preprocess a source file
 engine/src/sliders.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/sliders.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.i
 .PHONY : engine/src/sliders.cpp.i
 
 engine/src/sliders.s: engine/src/sliders.cpp.s
@@ -452,7 +599,32 @@ engine/src/sliders.s: engine/src/sliders.cpp.s
 # target to generate assembly for a file
 engine/src/sliders.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/sliders.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.s
 .PHONY : engine/src/sliders.cpp.s
+
+engine/src/wasm_bindings.o: engine/src/wasm_bindings.cpp.o
+.PHONY : engine/src/wasm_bindings.o
+
+# target to build an object file
+engine/src/wasm_bindings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o
+.PHONY : engine/src/wasm_bindings.cpp.o
+
+engine/src/wasm_bindings.i: engine/src/wasm_bindings.cpp.i
+.PHONY : engine/src/wasm_bindings.i
+
+# target to preprocess a source file
+engine/src/wasm_bindings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.i
+.PHONY : engine/src/wasm_bindings.cpp.i
+
+engine/src/wasm_bindings.s: engine/src/wasm_bindings.cpp.s
+.PHONY : engine/src/wasm_bindings.s
+
+# target to generate assembly for a file
+engine/src/wasm_bindings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.s
+.PHONY : engine/src/wasm_bindings.cpp.s
 
 tests/perft.o: tests/perft.cpp.o
 .PHONY : tests/perft.o
@@ -486,8 +658,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... chess_wasm"
 	@echo "... engine"
 	@echo "... perft"
+	@echo "... engine/src/attack.o"
+	@echo "... engine/src/attack.i"
+	@echo "... engine/src/attack.s"
 	@echo "... engine/src/attacks.o"
 	@echo "... engine/src/attacks.i"
 	@echo "... engine/src/attacks.s"
@@ -497,6 +673,9 @@ help:
 	@echo "... engine/src/legality.o"
 	@echo "... engine/src/legality.i"
 	@echo "... engine/src/legality.s"
+	@echo "... engine/src/makemove.o"
+	@echo "... engine/src/makemove.i"
+	@echo "... engine/src/makemove.s"
 	@echo "... engine/src/move.o"
 	@echo "... engine/src/move.i"
 	@echo "... engine/src/move.s"
@@ -521,12 +700,21 @@ help:
 	@echo "... engine/src/movegen/rook.o"
 	@echo "... engine/src/movegen/rook.i"
 	@echo "... engine/src/movegen/rook.s"
+	@echo "... engine/src/perft.o"
+	@echo "... engine/src/perft.i"
+	@echo "... engine/src/perft.s"
 	@echo "... engine/src/position.o"
 	@echo "... engine/src/position.i"
 	@echo "... engine/src/position.s"
+	@echo "... engine/src/position_init.o"
+	@echo "... engine/src/position_init.i"
+	@echo "... engine/src/position_init.s"
 	@echo "... engine/src/sliders.o"
 	@echo "... engine/src/sliders.i"
 	@echo "... engine/src/sliders.s"
+	@echo "... engine/src/wasm_bindings.o"
+	@echo "... engine/src/wasm_bindings.i"
+	@echo "... engine/src/wasm_bindings.s"
 	@echo "... tests/perft.o"
 	@echo "... tests/perft.i"
 	@echo "... tests/perft.s"

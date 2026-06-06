@@ -1,0 +1,1 @@
+/Users/wyattpuff/emsdk/upstream/emscripten/em++ -O3 -sWASM=1 -sMODULARIZE=1 -sEXPORT_NAME=createModule -sENVIRONMENT=web -sEXPORTED_FUNCTIONS=_initPosition,_getPiece,_debugPrintBoard -sEXPORTED_RUNTIME_METHODS=ccall,cwrap @CMakeFiles/chess_wasm.dir/objects1.rsp -o web/chess_wasm.js
