@@ -5,9 +5,7 @@ let pendingPromotion = null;
 
 createModule().then(m => {
     module = m;
-
     module._initPosition();
-
     renderBoard();
 });
 
@@ -42,7 +40,6 @@ function renderBoard() {
             "sq " + ((Math.floor(i / 8) + i) % 2 ? "dark" : "light");
 
         const piece = module._getPiece(i);
-
         sq.innerText = pieceToLetter(piece);
 
         if (i === selected) {
@@ -57,9 +54,12 @@ function renderBoard() {
 
 function onSquare(i) {
 
-    // block moves while promotion is pending
+    // block input during promotion
     if (pendingPromotion) return;
 
+    // -------------------------
+    // SELECT PIECE
+    // -------------------------
     if (selected === -1) {
         const moveCount = module._selectSquare(i);
         console.log("legal moves:", moveCount);
@@ -72,33 +72,34 @@ function onSquare(i) {
     const from = selected;
     const to = i;
 
-    // reselect moves from engine
+    // IMPORTANT: use selected-move API consistently
     const moveCount = module._selectSquare(from);
 
     let promoMoves = [];
 
+    // -------------------------
+    // PROMOTION DETECTION (FIXED)
+    // -------------------------
     for (let j = 0; j < moveCount; j++) {
 
-        const mTo = module._getMoveTo(j);
-        const flags = module._getMoveFlags(j);
-        const promo = module._getMovePromo(j);
+        const mTo = module._getSelectedMoveTo(j);
+        const flags = module._getSelectedMoveFlags(j);
+        const promo = module._getSelectedMovePromo(j);
 
         if (mTo === to && (flags & 4)) {
             promoMoves.push({ from, to, promo });
         }
     }
 
-    // -------------------------
-    // PROMOTION ONLY ADDITION
-    // -------------------------
-
+    // debug (optional but now correct)
     for (let j = 0; j < moveCount; j++) {
-        const to = module._getMoveTo(j);
-        const flags = module._getMoveFlags(j);
-        const promo = module._getMovePromo(j);
+
+        const mTo = module._getSelectedMoveTo(j);
+        const flags = module._getSelectedMoveFlags(j);
+        const promo = module._getSelectedMovePromo(j);
 
         console.log("RAW MOVE:", {
-            to,
+            to: mTo,
             flags,
             flagsType: typeof flags,
             flagsBin: (flags >>> 0).toString(2),
@@ -106,12 +107,16 @@ function onSquare(i) {
         });
     }
 
+    // -------------------------
+    // SHOW PROMOTION MENU
+    // -------------------------
     if (promoMoves.length > 0) {
         pendingPromotion = promoMoves;
         document.getElementById("promotionMenu").style.display = "block";
         return;
     }
 
+    // normal move
     module._makeMove(from, to);
 
     selected = -1;
@@ -119,7 +124,7 @@ function onSquare(i) {
 }
 
 // -------------------------
-// PROMOTION BUTTON HOOK
+// PROMOTION HANDLER
 // -------------------------
 window.choosePromotion = function(pieceType) {
 
@@ -129,7 +134,7 @@ window.choosePromotion = function(pieceType) {
 
     if (!move) return;
 
-    module._makeMove(move.from, move.to);
+    module._makeMove(move.from, move.to, move.promo);
 
     pendingPromotion = null;
     document.getElementById("promotionMenu").style.display = "none";

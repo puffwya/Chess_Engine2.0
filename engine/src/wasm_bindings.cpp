@@ -29,6 +29,8 @@ extern "C"
     {
         g_pos = PositionInit::startpos();
         g_moves.clear();
+        g_selectedMoves.clear();
+
         initKnightAttacks();
         initKingAttacks();
     }
@@ -59,7 +61,7 @@ extern "C"
     }
 
     // -------------------------
-    // MOVE GENERATION (ONE SQUARE CONTEXT)
+    // MOVE GENERATION (SELECTED PIECE)
     // -------------------------
     EMSCRIPTEN_KEEPALIVE
     int selectSquare(int sq)
@@ -95,6 +97,9 @@ extern "C"
         return g_selectedMoves[index].promo;
     }
 
+    // -------------------------
+    // IMPORTANT: DEBUG/LEGACY ACCESS (FIXED)
+    // -------------------------
     EMSCRIPTEN_KEEPALIVE
     int getMoveTo(int sq, int index)
     {
@@ -113,18 +118,33 @@ extern "C"
         return -1;
     }
 
+    EMSCRIPTEN_KEEPALIVE
+    int getMovePromo(int index)
+    {
+        return g_selectedMoves[index].promo;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getMoveFlags(int index)
+    {
+        return g_selectedMoves[index].flags;
+    }
+
     // -------------------------
     // MAKE MOVE
     // -------------------------
     EMSCRIPTEN_KEEPALIVE
-    void makeMove(int from, int to)
+    void makeMove(int from, int to, int promo)
     {
         for (const Move& m : g_moves)
         {
-            if (m.from == from && m.to == to)
+            if (m.from == from && m.to == to && m.promo == promo)
             {
                 MoveMaker::makeMove(g_pos, m, g_undo);
+
                 g_moves.clear();
+                g_selectedMoves.clear();
+
                 MoveGenerator::generateMoves(g_pos, g_moves);
                 return;
             }
@@ -141,18 +161,9 @@ extern "C"
         printf("White pawns: %d\n", whitePawns);
     }
 
-    EMSCRIPTEN_KEEPALIVE
-    int getMovePromo(int index)
-    {
-        return g_moves[index].promo;
-    }
-
-    EMSCRIPTEN_KEEPALIVE
-    int getMoveFlags(int index)
-    {
-        return g_moves[index].flags;
-    }
-
+    // -------------------------
+    // LEGAL MOVE FILTERING
+    // -------------------------
     EMSCRIPTEN_KEEPALIVE
     void generateLegalMoves()
     {
@@ -176,7 +187,6 @@ extern "C"
                 ? bb::lsb(copy.whiteKing)
                 : bb::lsb(copy.blackKing);
 
-            // opponent attacks AFTER move
             Color them = (us == WHITE ? BLACK : WHITE);
 
             bool inCheck = Attack::isSquareAttacked(copy, kingSq, them);

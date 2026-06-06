@@ -11,238 +11,98 @@ void generateWhitePawnMoves(const Position& pos, std::vector<Move>& moves)
     Bitboard empty   = ~(pos.whitePieces() | pos.blackPieces());
     Bitboard enemies = pos.blackPieces();
 
-    Bitboard p = pawns;
-
-    while (p)
+    while (pawns)
     {
-        int from = bb::popLSB(p);
+        int from = bb::popLSB(pawns);
         Bitboard fromBB = 1ULL << from;
 
-        // -------------------------
-        // single push
-        // -------------------------
+        // =========================================================
+        // SINGLE PUSH
+        // =========================================================
         Bitboard one = (fromBB << 8) & empty;
 
-        if (one)
+        while (one)
         {
+            int to = bb::popLSB(one);
 
-            Bitboard targets = (fromBB << 8) & empty;
-
-            while (targets)
-            {
-                int to = bb::popLSB(targets);
-
-                if (to / 8 == 7)
-                {
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
-                }
-                else
-                {
-                    moves.push_back({from, to, QUIET, NONE});
-                }
-            }
-            
-            // Promotion check
             if (to / 8 == 7)
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                });
-
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    BISHOP
-                });
-
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    KNIGHT
-                });
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
             }
             else
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    QUIET,
-                    NONE
-                });
-            }
-
-            // -------------------------
-            // double push (rank 2 only)
-            // -------------------------
-            if (from / 8 == 1)
-            {
-                Bitboard two = (fromBB << 16) & empty;
-                Bitboard between = (fromBB << 8);
-
-                if (two && (between & empty))
-                {
-                    int to2 = bb::lsb(two);
-                    moves.push_back({(uint8_t)from, (uint8_t)to2, DOUBLE_PUSH, NONE});
-                }
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, QUIET, NONE});
             }
         }
 
-        // -------------------------
-        // captures
-        // -------------------------
+        // double push
+        if (from / 8 == 1)
+        {
+            Bitboard two = (fromBB << 16) & empty;
+            Bitboard between = (fromBB << 8);
 
-        // left capture (up-left)
+            if (two && (between & empty))
+            {
+                int to2 = bb::lsb(two);
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to2, DOUBLE_PUSH, NONE});
+            }
+        }
+
+        // =========================================================
+        // CAPTURES
+        // =========================================================
+
+        // left capture
         Bitboard capLeft = (fromBB << 7) & enemies & ~FILE_H;
-        if (capLeft)
+
+        while (capLeft)
         {
-            Bitboard targets = (fromBB << 8) & empty;
-                    
-            while (targets)
-            {
-                int to = bb::popLSB(targets);
+            int to = bb::popLSB(capLeft);
 
-                if (to / 8 == 7)
-                {
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
-                }
-                else
-                {
-                    moves.push_back({from, to, QUIET, NONE});
-                }
-            }
-
-            // Promotion check
             if (to / 8 == 7)
             {
-                moves.push_back({ 
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-                
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                });
-                
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    BISHOP
-                });
-                
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    KNIGHT
-                });
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
             }
             else
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    CAPTURE,
-                    NONE
-                });
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, CAPTURE, NONE});
             }
-
         }
 
-        // right capture (up-right)
+        // right capture
         Bitboard capRight = (fromBB << 9) & enemies & ~FILE_A;
-        if (capRight)
+
+        while (capRight)
         {
-            Bitboard targets = (fromBB << 8) & empty;
-                    
-            while (targets)
-            {
-                int to = bb::popLSB(targets);
+            int to = bb::popLSB(capRight);
 
-                if (to / 8 == 7)
-                {
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
-                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
-                }
-                else
-                {
-                    moves.push_back({from, to, QUIET, NONE});
-                }
-            }
-
-            // Promotion check
             if (to / 8 == 7)
             {
-                moves.push_back({ 
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-                
-                moves.push_back({ 
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                }); 
-                
-                moves.push_back({ 
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    BISHOP
-                });
-                
-                moves.push_back({ 
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    KNIGHT
-                });
-            }   
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
+            }
             else
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    CAPTURE,
-                    NONE
-                });  
+                moves.push_back(Move{(uint8_t)from, (uint8_t)to, CAPTURE, NONE});
             }
         }
 
+        // =========================================================
+        // EN PASSANT
+        // =========================================================
         if (pos.enPassantSquare != -1)
         {
-            if (from + 7 == pos.enPassantSquare &&
-                (fromBB & ~FILE_A))
+            if (from + 7 == pos.enPassantSquare && !(fromBB & FILE_A))
             {
-                moves.push_back({
+                moves.push_back(Move{
                     (uint8_t)from,
                     (uint8_t)pos.enPassantSquare,
                     EN_PASSANT,
@@ -250,10 +110,9 @@ void generateWhitePawnMoves(const Position& pos, std::vector<Move>& moves)
                 });
             }
 
-            if (from + 9 == pos.enPassantSquare &&
-                (fromBB & ~FILE_H))
+            if (from + 9 == pos.enPassantSquare && !(fromBB & FILE_H))
             {
-                moves.push_back({
+                moves.push_back(Move{
                     (uint8_t)from,
                     (uint8_t)pos.enPassantSquare,
                     EN_PASSANT,
@@ -279,64 +138,38 @@ void generateBlackPawnMoves(const Position& pos, std::vector<Move>& moves)
         Bitboard fromBB = 1ULL << from;
 
         // -------------------------
-        // single push
+        // single push (down)
         // -------------------------
         Bitboard one = (fromBB >> 8) & empty;
 
         if (one)
         {
-            int to = bb::lsb(one);
-            
-            // Promotion check
-            if (to / 8 == 0)
-            {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-         
-                moves.push_back({
-                    (uint8_t)from, 
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                });
-            
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    BISHOP
-                });
-                    
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    KNIGHT
-                });
-            }
-            else   
-            {       
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    CAPTURE,  
-                    NONE  
-                });
-            }  
+            Bitboard targets = one;
 
-            // -------------------------
-            // double push (rank 7 only)
-            // -------------------------
+            while (targets)
+            {
+                int to = bb::popLSB(targets);
+
+                if (to / 8 == 0)
+                {
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
+                }
+                else
+                {
+                    moves.push_back({(uint8_t)from, (uint8_t)to, QUIET, NONE});
+                }
+            }
+
+            // double push (rank 7 start)
             if (from / 8 == 6)
             {
                 Bitboard two = (fromBB >> 16) & empty;
-                Bitboard between = (fromBB >> 8);
+                Bitboard between = (fromBB >> 8) & empty;
 
-                if (two && (between & empty))
+                if (two && between)
                 {
                     int to2 = bb::lsb(two);
                     moves.push_back({(uint8_t)from, (uint8_t)to2, DOUBLE_PUSH, NONE});
@@ -352,102 +185,56 @@ void generateBlackPawnMoves(const Position& pos, std::vector<Move>& moves)
         Bitboard capLeft = (fromBB >> 9) & enemies & ~FILE_H;
         if (capLeft)
         {
-            int to = bb::lsb(capLeft);
-            
-            // Promotion check
-            if (to / 8 == 0)
+            Bitboard targets = capLeft;
+
+            while (targets)
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-         
-                moves.push_back({
-                    (uint8_t)from, 
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                });
-            
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    BISHOP
-                });
-                    
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    KNIGHT
-                });
+                int to = bb::popLSB(targets);
+
+                if (to / 8 == 0)
+                {
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
+                }
+                else
+                {
+                    moves.push_back({(uint8_t)from, (uint8_t)to, CAPTURE, NONE});
+                }
             }
-            else   
-            {       
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    CAPTURE,  
-                    NONE  
-                });
-            }  
         }
 
         // down-right
         Bitboard capRight = (fromBB >> 7) & enemies & ~FILE_A;
         if (capRight)
         {
-            int to = bb::lsb(capRight);
+            Bitboard targets = capRight;
 
-            // Promotion check
-            if (to / 8 == 0)
+            while (targets)
             {
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    PROMOTION,
-                    QUEEN
-                });
-         
-                moves.push_back({
-                    (uint8_t)from, 
-                    (uint8_t)to,
-                    PROMOTION,
-                    ROOK
-                });
-            
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    BISHOP
-                });
-                    
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to, 
-                    PROMOTION,
-                    KNIGHT
-                });
+                int to = bb::popLSB(targets);
+
+                if (to / 8 == 0)
+                {
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, QUEEN});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, ROOK});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, BISHOP});
+                    moves.push_back(Move{(uint8_t)from, (uint8_t)to, PROMOTION, KNIGHT});
+                }
+                else
+                {
+                    moves.push_back({(uint8_t)from, (uint8_t)to, CAPTURE, NONE});
+                }
             }
-            else   
-            {       
-                moves.push_back({
-                    (uint8_t)from,
-                    (uint8_t)to,
-                    CAPTURE,  
-                    NONE  
-                });
-            }  
         }
 
+        // -------------------------
+        // en passant
+        // -------------------------
         if (pos.enPassantSquare != -1)
         {
-            if (from - 7 == pos.enPassantSquare &&
-                (fromBB & ~FILE_H))
+            if (from - 7 == pos.enPassantSquare && (fromBB & ~FILE_H))
             {
                 moves.push_back({
                     (uint8_t)from,
@@ -457,8 +244,7 @@ void generateBlackPawnMoves(const Position& pos, std::vector<Move>& moves)
                 });
             }
 
-            if (from - 9 == pos.enPassantSquare &&
-                (fromBB & ~FILE_A))
+            if (from - 9 == pos.enPassantSquare && (fromBB & ~FILE_A))
             {
                 moves.push_back({
                     (uint8_t)from,
