@@ -4,16 +4,20 @@
 #include "position.h"
 #include "position_init.h"
 #include "movegen.h"
+#include "attack.h"
 #include "attacks.h"
 #include "makemove.h"
 #include "bitboard.h"
 
 // -------------------------
-// GLOBAL STATE (debug engine only)
+// GLOBAL STATE
 // -------------------------
 static Position g_pos;
 static std::vector<Move> g_moves;
+static std::vector<Move> g_selectedMoves;
 static UndoInfo g_undo;
+
+extern "C" void generateLegalMoves();
 
 // -------------------------
 // INIT
@@ -60,16 +64,35 @@ extern "C"
     EMSCRIPTEN_KEEPALIVE
     int selectSquare(int sq)
     {
-        g_moves.clear();
-        MoveGenerator::generateMoves(g_pos, g_moves);
+        generateLegalMoves();
 
-        int count = 0;
+        g_selectedMoves.clear();
 
         for (const Move& m : g_moves)
+        {
             if (m.from == sq)
-                count++;
+                g_selectedMoves.push_back(m);
+        }
 
-        return count;
+        return (int)g_selectedMoves.size();
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getSelectedMoveTo(int index)
+    {
+        return g_selectedMoves[index].to;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getSelectedMoveFlags(int index)
+    {
+        return g_selectedMoves[index].flags;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getSelectedMovePromo(int index)
+    {
+        return g_selectedMoves[index].promo;
     }
 
     EMSCRIPTEN_KEEPALIVE
@@ -91,7 +114,7 @@ extern "C"
     }
 
     // -------------------------
-    // MAKE MOVE (SAFE)
+    // MAKE MOVE
     // -------------------------
     EMSCRIPTEN_KEEPALIVE
     void makeMove(int from, int to)
@@ -101,6 +124,8 @@ extern "C"
             if (m.from == from && m.to == to)
             {
                 MoveMaker::makeMove(g_pos, m, g_undo);
+                g_moves.clear();
+                MoveGenerator::generateMoves(g_pos, g_moves);
                 return;
             }
         }
@@ -114,5 +139,52 @@ extern "C"
     {
         int whitePawns = __builtin_popcountll(g_pos.whitePawns);
         printf("White pawns: %d\n", whitePawns);
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getMovePromo(int index)
+    {
+        return g_moves[index].promo;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int getMoveFlags(int index)
+    {
+        return g_moves[index].flags;
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    void generateLegalMoves()
+    {
+        g_moves.clear();
+
+        MoveGenerator::generateMoves(g_pos, g_moves);
+
+        std::vector<Move> legal;
+        legal.reserve(g_moves.size());
+
+        for (const Move& m : g_moves)
+        {
+            Position copy = g_pos;
+            UndoInfo undo;
+
+            Color us = copy.sideToMove;
+
+            MoveMaker::makeMove(copy, m, undo);
+
+            int kingSq = (us == WHITE)
+                ? bb::lsb(copy.whiteKing)
+                : bb::lsb(copy.blackKing);
+
+            // opponent attacks AFTER move
+            Color them = (us == WHITE ? BLACK : WHITE);
+
+            bool inCheck = Attack::isSquareAttacked(copy, kingSq, them);
+
+            if (!inCheck)
+                legal.push_back(m);
+        }
+
+        g_moves = std::move(legal);
     }
 }

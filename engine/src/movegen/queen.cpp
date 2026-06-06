@@ -50,7 +50,7 @@ void generateWhiteQueenMoves(const Position& pos, std::vector<Move>& moves)
                 (uint8_t)from,
                 (uint8_t)to,
                 isCapture ? CAPTURE : QUIET,
-                0
+                NONE
             });
         }
     }
@@ -82,7 +82,7 @@ void generateBlackQueenMoves(const Position& pos, std::vector<Move>& moves)
                 (uint8_t)from,
                 (uint8_t)to,
                 isCapture ? CAPTURE : QUIET,
-                0
+                NONE
             });
         }
     }

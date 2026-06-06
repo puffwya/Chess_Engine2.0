@@ -11,10 +11,19 @@ enum MoveFlags : uint8_t
     CASTLE = 16
 };
 
+enum PieceType : uint8_t
+{
+    NONE   = 0,
+    KNIGHT = 1,
+    BISHOP = 2,
+    ROOK   = 3,
+    QUEEN  = 4
+};
+
 struct Move
 {
     uint8_t from;
     uint8_t to;
     MoveFlags flags;
-    uint8_t promo; // 0 if none
+    PieceType promo;
 };

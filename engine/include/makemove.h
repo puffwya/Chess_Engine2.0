@@ -7,6 +7,7 @@ struct UndoInfo
 {
     uint8_t capturedPiece;   // 0 if none
     bool    castlingRights;  // (expand later)
+    bool    wasWhite;
     int     enPassantSquare;
 };
 

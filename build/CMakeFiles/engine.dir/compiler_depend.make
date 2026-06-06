@@ -2557,6 +2557,7 @@ CMakeFiles/engine.dir/engine/src/movegen/bishop.cpp.o: /Users/wyattpuff/Chess_En
   /Users/wyattpuff/emsdk/upstream/lib/clang/21/include/stdint.h
 
 CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/attack.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/attacks.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/bitboard.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/move.h \

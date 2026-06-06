@@ -161,6 +161,7 @@ engine/src/attack.o: engine/src/attack.cpp.o
 # target to build an object file
 engine/src/attack.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o
 .PHONY : engine/src/attack.cpp.o
 
 engine/src/attack.i: engine/src/attack.cpp.i
@@ -169,6 +170,7 @@ engine/src/attack.i: engine/src/attack.cpp.i
 # target to preprocess a source file
 engine/src/attack.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.i
 .PHONY : engine/src/attack.cpp.i
 
 engine/src/attack.s: engine/src/attack.cpp.s
@@ -177,6 +179,7 @@ engine/src/attack.s: engine/src/attack.cpp.s
 # target to generate assembly for a file
 engine/src/attack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/src/attack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.s
 .PHONY : engine/src/attack.cpp.s
 
 engine/src/attacks.o: engine/src/attacks.cpp.o

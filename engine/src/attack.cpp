@@ -16,18 +16,22 @@ bool Attack::isSquareAttacked(
 
     if (attackerSide == WHITE)
     {
+        Bitboard pawns = pos.whitePawns;
+
         Bitboard attacks =
-            ((pos.whitePawns << 7) & ~FILE_H) |
-            ((pos.whitePawns << 9) & ~FILE_A);
+            ((pawns << 7) & ~FILE_H) |
+            ((pawns << 9) & ~FILE_A);
 
         if (attacks & target)
             return true;
     }
     else
     {
+        Bitboard pawns = pos.blackPawns;
+
         Bitboard attacks =
-            ((pos.blackPawns >> 7) & ~FILE_A) |
-            ((pos.blackPawns >> 9) & ~FILE_H);
+            ((pawns >> 7) & ~FILE_A) |
+            ((pawns >> 9) & ~FILE_H);
 
         if (attacks & target)
             return true;
@@ -134,4 +138,21 @@ bool Attack::isSquareAttacked(
     }
 
     return false;
+}
+
+bool Attack::isKingInCheck(const Position& pos, Color side)
+{
+    int kingSquare;
+
+    if (side == WHITE)
+        kingSquare = bb::lsb(pos.whiteKing);
+    else
+        kingSquare = bb::lsb(pos.blackKing);
+
+    // if opponent attacks king square → check
+    return isSquareAttacked(
+        pos,
+        kingSquare,
+        side == WHITE ? BLACK : WHITE
+    );
 }

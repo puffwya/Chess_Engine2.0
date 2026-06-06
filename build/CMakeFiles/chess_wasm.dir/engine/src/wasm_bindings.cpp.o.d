@@ -620,5 +620,6 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/position_init.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/movegen.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/move.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/attack.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/attacks.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/makemove.h

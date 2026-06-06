@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp" "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp" "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp" "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp" "CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o.d"

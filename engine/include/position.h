@@ -24,4 +24,16 @@ struct Position
     Bitboard occupancy() const;
 
     Color sideToMove;
+
+    // castling rights
+    bool whiteKingMoved = false;
+    bool blackKingMoved = false;
+
+    bool whiteRookAMoved = false; // a1 rook
+    bool whiteRookHMoved = false; // h1 rook
+
+    bool blackRookAMoved = false; // a8 rook
+    bool blackRookHMoved = false; // h8 rook
+
+    int enPassantSquare = -1;
 };

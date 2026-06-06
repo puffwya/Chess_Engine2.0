@@ -162,11 +162,26 @@ CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.s"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp -o CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.s
 
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o: CMakeFiles/chess_wasm.dir/flags.make
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp
+
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.i"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp > CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.i
+
+CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.s"
+	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp -o CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.s
+
 CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o: CMakeFiles/chess_wasm.dir/flags.make
 CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp
 CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.i: cmake_force
@@ -181,7 +196,7 @@ CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o: CMakeFiles/chess_wasm.dir/fl
 CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp
 CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.i: cmake_force
@@ -196,7 +211,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/chess_wasm.d
 CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/pawn.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.i: cmake_force
@@ -211,7 +226,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/chess_wasm
 CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/knight.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/knight.cpp.i: cmake_force
@@ -226,7 +241,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/chess_wasm
 CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.i: cmake_force
@@ -241,7 +256,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/chess_wasm.d
 CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.i: cmake_force
@@ -256,7 +271,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/chess_wasm.
 CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/queen.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/queen.cpp.i: cmake_force
@@ -271,7 +286,7 @@ CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o: CMakeFiles/chess_wasm.d
 CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o: CMakeFiles/chess_wasm.dir/includes_CXX.rsp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o: /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp
 CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o: CMakeFiles/chess_wasm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o"
 	/Users/wyattpuff/emsdk/upstream/emscripten/em++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o -MF CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o.d -o CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o -c /Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/king.cpp
 
 CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.i: cmake_force
@@ -290,6 +305,7 @@ chess_wasm_OBJECTS = \
 "CMakeFiles/chess_wasm.dir/engine/src/position.cpp.o" \
 "CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.o" \
 "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o" \
+"CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o" \
 "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o" \
 "CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o" \
 "CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o" \
@@ -308,6 +324,7 @@ web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/position.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o
+web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/movegen/pawn.cpp.o
@@ -319,7 +336,7 @@ web/chess_wasm.js: CMakeFiles/chess_wasm.dir/engine/src/movegen/king.cpp.o
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/build.make
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/objects1.rsp
 web/chess_wasm.js: CMakeFiles/chess_wasm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable web/chess_wasm.js"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wyattpuff/Chess_Engine2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable web/chess_wasm.js"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chess_wasm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

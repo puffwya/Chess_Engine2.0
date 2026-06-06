@@ -1,102 +1,139 @@
-const ModulePromise = createModule();
+let module;
 
-ModulePromise.then((Module) => {
+let selected = -1;
+let pendingPromotion = null;
 
-    Module._initPosition();
+createModule().then(m => {
+    module = m;
 
-    const boardDiv = document.getElementById("board");
+    module._initPosition();
 
-    boardDiv.style.display = "grid";
-    boardDiv.style.gridTemplateColumns = "repeat(8, 60px)";
-    boardDiv.style.width = "480px";
-
-    let selectedSquare = -1;
-    let moveCount = 0;
-
-    const pieceMap = {
-        1: "P",
-        2: "N",
-        3: "B",
-        4: "R",
-        5: "Q",
-        6: "K",
-        "-1": "p",
-        "-2": "n",
-        "-3": "b",
-        "-4": "r",
-        "-5": "q",
-        "-6": "k"
-    };
-
-    function draw() {
-        boardDiv.innerHTML = "";
-
-        for (let i = 0; i < 64; i++) {
-            const sq = document.createElement("div");
-
-            const row = Math.floor(i / 8);
-            const col = i % 8;
-
-            sq.style.width = "60px";
-            sq.style.height = "60px";
-            sq.style.display = "flex";
-            sq.style.alignItems = "center";
-            sq.style.justifyContent = "center";
-            sq.style.fontSize = "32px";
-            sq.style.cursor = "pointer";
-
-            sq.style.background =
-                (row + col) % 2 === 0 ? "#eeeed2" : "#769656";
-
-            // highlight selected square
-            if (i === selectedSquare) {
-                sq.style.outline = "3px solid yellow";
-            }
-
-            const piece = Module._getPiece(i);
-            sq.textContent = pieceMap[piece] || "";
-
-            sq.onclick = () => onSquareClick(i);
-
-            boardDiv.appendChild(sq);
-        }
-    }
-
-    function onSquareClick(i) {
-
-        // -------------------------
-        // STEP 1: select square
-        // -------------------------
-        const count = Module._selectSquare(i);
-
-        // if clicking same square → deselect
-        if (selectedSquare === i) {
-            selectedSquare = -1;
-            draw();
-            return;
-        }
-
-        // if we already selected a piece → attempt move
-        if (selectedSquare !== -1) {
-
-            const from = selectedSquare;
-            const to = i;
-
-            Module._makeMove(from, to);
-
-            selectedSquare = -1;
-            draw();
-            return;
-        }
-
-        // otherwise select new square
-        selectedSquare = i;
-        moveCount = count;
-
-        console.log("moves for square:", count);
-
-        draw();
-    }
-
-    draw();
+    renderBoard();
 });
+
+function pieceToLetter(piece) {
+    switch (piece) {
+        case 1: return "P";
+        case 2: return "N";
+        case 3: return "B";
+        case 4: return "R";
+        case 5: return "Q";
+        case 6: return "K";
+
+        case -1: return "p";
+        case -2: return "n";
+        case -3: return "b";
+        case -4: return "r";
+        case -5: return "q";
+        case -6: return "k";
+
+        default: return "";
+    }
+}
+
+function renderBoard() {
+    const boardDiv = document.getElementById("board");
+    boardDiv.innerHTML = "";
+
+    for (let i = 0; i < 64; i++) {
+        const sq = document.createElement("div");
+
+        sq.className =
+            "sq " + ((Math.floor(i / 8) + i) % 2 ? "dark" : "light");
+
+        const piece = module._getPiece(i);
+
+        sq.innerText = pieceToLetter(piece);
+
+        if (i === selected) {
+            sq.style.outline = "2px solid yellow";
+        }
+
+        sq.onclick = () => onSquare(i);
+
+        boardDiv.appendChild(sq);
+    }
+}
+
+function onSquare(i) {
+
+    // block moves while promotion is pending
+    if (pendingPromotion) return;
+
+    if (selected === -1) {
+        const moveCount = module._selectSquare(i);
+        console.log("legal moves:", moveCount);
+
+        selected = i;
+        renderBoard();
+        return;
+    }
+
+    const from = selected;
+    const to = i;
+
+    // reselect moves from engine
+    const moveCount = module._selectSquare(from);
+
+    let promoMoves = [];
+
+    for (let j = 0; j < moveCount; j++) {
+
+        const mTo = module._getMoveTo(j);
+        const flags = module._getMoveFlags(j);
+        const promo = module._getMovePromo(j);
+
+        if (mTo === to && (flags & 4)) {
+            promoMoves.push({ from, to, promo });
+        }
+    }
+
+    // -------------------------
+    // PROMOTION ONLY ADDITION
+    // -------------------------
+
+    for (let j = 0; j < moveCount; j++) {
+        const to = module._getMoveTo(j);
+        const flags = module._getMoveFlags(j);
+        const promo = module._getMovePromo(j);
+
+        console.log("RAW MOVE:", {
+            to,
+            flags,
+            flagsType: typeof flags,
+            flagsBin: (flags >>> 0).toString(2),
+            promo
+        });
+    }
+
+    if (promoMoves.length > 0) {
+        pendingPromotion = promoMoves;
+        document.getElementById("promotionMenu").style.display = "block";
+        return;
+    }
+
+    module._makeMove(from, to);
+
+    selected = -1;
+    renderBoard();
+}
+
+// -------------------------
+// PROMOTION BUTTON HOOK
+// -------------------------
+window.choosePromotion = function(pieceType) {
+
+    if (!pendingPromotion) return;
+
+    const move = pendingPromotion.find(m => m.promo === pieceType);
+
+    if (!move) return;
+
+    module._makeMove(move.from, move.to);
+
+    pendingPromotion = null;
+    document.getElementById("promotionMenu").style.display = "none";
+
+    selected = -1;
+    renderBoard();
+};

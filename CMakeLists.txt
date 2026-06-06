@@ -46,6 +46,7 @@ add_executable(chess_wasm
     engine/src/position.cpp
     engine/src/position_init.cpp
     engine/src/bitboard.cpp
+    engine/src/attack.cpp
     engine/src/attacks.cpp
     engine/src/sliders.cpp
 
@@ -69,7 +70,7 @@ target_link_options(chess_wasm PRIVATE
     -sEXPORT_NAME=createModule
     -sENVIRONMENT=web
 
-    -sEXPORTED_FUNCTIONS=_initPosition,_getPiece,_debugPrintBoard
+    -sEXPORTED_FUNCTIONS=_initPosition,_getPiece,_debugPrintBoard,_selectSquare,_getMoveTo,_getMoveFlags,_getMovePromo,_makeMove
 
     -sEXPORTED_RUNTIME_METHODS=ccall,cwrap
 )

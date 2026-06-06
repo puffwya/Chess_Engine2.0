@@ -608,5 +608,6 @@ CMakeFiles/engine.dir/engine/src/movegen/king.cpp.o: \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/position.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/bitboard.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/move.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/attack.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/attacks.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/movegen/king.h

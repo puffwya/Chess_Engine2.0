@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o"
+  "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o.d"
   "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o"
   "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o.d"
   "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o"
