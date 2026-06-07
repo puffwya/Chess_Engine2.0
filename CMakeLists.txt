@@ -43,6 +43,8 @@ add_executable(chess_wasm
     engine/src/wasm_bindings.cpp
     engine/src/movegen.cpp
     engine/src/makemove.cpp
+    engine/src/evaluate.cpp
+    engine/src/search.cpp
     engine/src/position.cpp
     engine/src/position_init.cpp
     engine/src/bitboard.cpp

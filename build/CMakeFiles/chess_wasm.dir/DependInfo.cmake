@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/attack.cpp" "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/attack.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/attacks.cpp" "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/attacks.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/bitboard.cpp" "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.o.d"
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/evaluate.cpp" "CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/makemove.cpp" "CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/makemove.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen.cpp" "CMakeFiles/chess_wasm.dir/engine/src/movegen.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/movegen.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/bishop.cpp" "CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/movegen/bishop.cpp.o.d"
@@ -21,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/movegen/rook.cpp" "CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/movegen/rook.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/position.cpp" "CMakeFiles/chess_wasm.dir/engine/src/position.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/position.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/position_init.cpp" "CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.o.d"
+  "/Users/wyattpuff/Chess_Engine2.0/engine/src/search.cpp" "CMakeFiles/chess_wasm.dir/engine/src/search.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/search.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/sliders.cpp" "CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/sliders.cpp.o.d"
   "/Users/wyattpuff/Chess_Engine2.0/engine/src/wasm_bindings.cpp" "CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o" "gcc" "CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o.d"
   )

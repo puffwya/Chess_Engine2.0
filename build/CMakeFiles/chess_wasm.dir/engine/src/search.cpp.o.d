@@ -1,10 +1,9 @@
-CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
-  /Users/wyattpuff/Chess_Engine2.0/engine/src/wasm_bindings.cpp \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/emscripten.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_asm.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_macros.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_types.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdbool.h \
+CMakeFiles/chess_wasm.dir/engine/src/search.cpp.o: \
+  /Users/wyattpuff/Chess_Engine2.0/engine/src/search.cpp \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/search.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/position.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/bitboard.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdint \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config_site \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/abi.h \
@@ -12,18 +11,12 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/platform.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/availability.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__configuration/language.h \
-  /Users/wyattpuff/emsdk/upstream/lib/clang/21/include/stdbool.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/stdbool.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/em_js.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/promise.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdlib.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
+  /Users/wyattpuff/emsdk/upstream/lib/clang/21/include/stdint.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/stdint.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/wget.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/version.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/move.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/movegen.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/vector \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__vector/comparison.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__algorithm/equal.h \
@@ -168,10 +161,6 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/datasizeof.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_always_bitcastable.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_trivially_copyable.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdint \
-  /Users/wyattpuff/emsdk/upstream/lib/clang/21/include/stdint.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/stdint.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_constant_evaluated.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_equality_comparable.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h \
@@ -243,6 +232,7 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cctype \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/ctype.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/ctype.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/features.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/wctype.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/wctype.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/wchar.h \
@@ -322,6 +312,10 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/string.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__fwd/memory_resource.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdlib \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/compat/stdlib.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/stdlib.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/stdlib.h \
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/exception \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__exception/exception_ptr.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__exception/operations.h \
@@ -615,13 +609,5 @@ CMakeFiles/chess_wasm.dir/engine/src/wasm_bindings.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/system_error \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/streambuf \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/cstdarg \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/position.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/bitboard.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/position_init.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/movegen.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/move.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/evaluate.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/search.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/attack.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/attacks.h \
-  /Users/wyattpuff/Chess_Engine2.0/engine/include/makemove.h
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/makemove.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/evaluate.h

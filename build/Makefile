@@ -236,6 +236,30 @@ engine/src/bitboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/bitboard.cpp.s
 .PHONY : engine/src/bitboard.cpp.s
 
+engine/src/evaluate.o: engine/src/evaluate.cpp.o
+.PHONY : engine/src/evaluate.o
+
+# target to build an object file
+engine/src/evaluate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.o
+.PHONY : engine/src/evaluate.cpp.o
+
+engine/src/evaluate.i: engine/src/evaluate.cpp.i
+.PHONY : engine/src/evaluate.i
+
+# target to preprocess a source file
+engine/src/evaluate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.i
+.PHONY : engine/src/evaluate.cpp.i
+
+engine/src/evaluate.s: engine/src/evaluate.cpp.s
+.PHONY : engine/src/evaluate.s
+
+# target to generate assembly for a file
+engine/src/evaluate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.s
+.PHONY : engine/src/evaluate.cpp.s
+
 engine/src/legality.o: engine/src/legality.cpp.o
 .PHONY : engine/src/legality.o
 
@@ -578,6 +602,30 @@ engine/src/position_init.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/position_init.cpp.s
 .PHONY : engine/src/position_init.cpp.s
 
+engine/src/search.o: engine/src/search.cpp.o
+.PHONY : engine/src/search.o
+
+# target to build an object file
+engine/src/search.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/search.cpp.o
+.PHONY : engine/src/search.cpp.o
+
+engine/src/search.i: engine/src/search.cpp.i
+.PHONY : engine/src/search.i
+
+# target to preprocess a source file
+engine/src/search.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/search.cpp.i
+.PHONY : engine/src/search.cpp.i
+
+engine/src/search.s: engine/src/search.cpp.s
+.PHONY : engine/src/search.s
+
+# target to generate assembly for a file
+engine/src/search.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_wasm.dir/build.make CMakeFiles/chess_wasm.dir/engine/src/search.cpp.s
+.PHONY : engine/src/search.cpp.s
+
 engine/src/sliders.o: engine/src/sliders.cpp.o
 .PHONY : engine/src/sliders.o
 
@@ -673,6 +721,9 @@ help:
 	@echo "... engine/src/bitboard.o"
 	@echo "... engine/src/bitboard.i"
 	@echo "... engine/src/bitboard.s"
+	@echo "... engine/src/evaluate.o"
+	@echo "... engine/src/evaluate.i"
+	@echo "... engine/src/evaluate.s"
 	@echo "... engine/src/legality.o"
 	@echo "... engine/src/legality.i"
 	@echo "... engine/src/legality.s"
@@ -712,6 +763,9 @@ help:
 	@echo "... engine/src/position_init.o"
 	@echo "... engine/src/position_init.i"
 	@echo "... engine/src/position_init.s"
+	@echo "... engine/src/search.o"
+	@echo "... engine/src/search.i"
+	@echo "... engine/src/search.s"
 	@echo "... engine/src/sliders.o"
 	@echo "... engine/src/sliders.i"
 	@echo "... engine/src/sliders.s"

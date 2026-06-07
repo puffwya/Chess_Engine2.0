@@ -72,13 +72,13 @@ function onSquare(i) {
     const from = selected;
     const to = i;
 
-    // IMPORTANT: use selected-move API consistently
+    // Use selected-move API consistently
     const moveCount = module._selectSquare(from);
 
     let promoMoves = [];
 
     // -------------------------
-    // PROMOTION DETECTION (FIXED)
+    // PROMOTION DETECTION
     // -------------------------
     for (let j = 0; j < moveCount; j++) {
 
@@ -91,7 +91,7 @@ function onSquare(i) {
         }
     }
 
-    // debug (optional but now correct)
+    // debug
     for (let j = 0; j < moveCount; j++) {
 
         const mTo = module._getSelectedMoveTo(j);
@@ -107,6 +107,8 @@ function onSquare(i) {
         });
     }
 
+    console.log(module._evaluatePosition());
+
     // -------------------------
     // SHOW PROMOTION MENU
     // -------------------------
@@ -117,10 +119,21 @@ function onSquare(i) {
     }
 
     // normal move
-    module._makeMove(from, to);
+    const moveMade = module._makeMove(from, to);
+
+    if (!moveMade) {
+        selected = -1;
+        renderBoard();
+        return;
+    }
 
     selected = -1;
     renderBoard();
+
+    setTimeout(() => {
+        module._makeAIMove();
+        renderBoard();
+    }, 250);
 }
 
 // -------------------------

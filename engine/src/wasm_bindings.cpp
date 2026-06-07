@@ -4,6 +4,8 @@
 #include "position.h"
 #include "position_init.h"
 #include "movegen.h"
+#include "evaluate.h"
+#include "search.h"
 #include "attack.h"
 #include "attacks.h"
 #include "makemove.h"
@@ -97,8 +99,23 @@ extern "C"
         return g_selectedMoves[index].promo;
     }
 
+    EMSCRIPTEN_KEEPALIVE
+    void makeAIMove()
+    {
+        generateLegalMoves();
+
+        if (g_moves.empty())
+            return;
+
+        Move best = Search::findBestMove(g_pos, 3); // start with depth 3
+
+        MoveMaker::makeMove(g_pos, best, g_undo);
+
+        g_moves.clear();
+    }
+
     // -------------------------
-    // IMPORTANT: DEBUG/LEGACY ACCESS (FIXED)
+    // IMPORTANT: DEBUG/LEGACY ACCESS
     // -------------------------
     EMSCRIPTEN_KEEPALIVE
     int getMoveTo(int sq, int index)
@@ -134,21 +151,22 @@ extern "C"
     // MAKE MOVE
     // -------------------------
     EMSCRIPTEN_KEEPALIVE
-    void makeMove(int from, int to, int promo)
+    bool makeMove(int from, int to)
     {
         for (const Move& m : g_moves)
         {
-            if (m.from == from && m.to == to && m.promo == promo)
+            if (m.from == from && m.to == to)
             {
                 MoveMaker::makeMove(g_pos, m, g_undo);
 
                 g_moves.clear();
-                g_selectedMoves.clear();
-
                 MoveGenerator::generateMoves(g_pos, g_moves);
-                return;
+
+                return true;
             }
         }
+
+        return false;
     }
 
     // -------------------------
@@ -159,6 +177,12 @@ extern "C"
     {
         int whitePawns = __builtin_popcountll(g_pos.whitePawns);
         printf("White pawns: %d\n", whitePawns);
+    }
+
+    EMSCRIPTEN_KEEPALIVE
+    int evaluatePosition()
+    {
+        return Evaluate::evaluate(g_pos);
     }
 
     // -------------------------
