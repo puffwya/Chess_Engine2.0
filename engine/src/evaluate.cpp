@@ -16,7 +16,7 @@ namespace
 
     constexpr int OVEREXPOSED_PENALTY = 5;
 
-    // NEW: safety tuning
+    // safety tuning
     constexpr int SAFETY_FACTOR = 12;
 
     constexpr int pawnPST[64]   = { /* unchanged */ };
@@ -102,7 +102,7 @@ namespace Evaluate
         addPiece(pos.blackKing,    20000,        kingPST,   false);
 
         // -------------------------
-        // ATTACK PRESSURE (existing)
+        // ATTACK PRESSURE
         // -------------------------
         auto pressure = [&](Bitboard bb, Color side)
         {
@@ -195,6 +195,50 @@ namespace Evaluate
 
             knightPenalty(pos.whiteKnights, WHITE);
             knightPenalty(pos.blackKnights, BLACK);
+        }
+
+        // -------------------------
+        // OPENING STRUCTURE CONTROL
+        // -------------------------
+
+        int pieceCount =
+            __builtin_popcountll(pos.whitePieces()) +
+            __builtin_popcountll(pos.blackPieces());
+
+        if (opening)
+        {
+            // center pawn encouragement
+            Bitboard center = (1ULL << 27) | (1ULL << 28) | (1ULL << 35) | (1ULL << 36);
+
+            if (pos.whitePawns & center) score += 15;
+            if (pos.blackPawns & center) score -= 15;
+
+            // punish early knight moves off original squares
+            Bitboard whiteKnightsStart = (1ULL << 1) | (1ULL << 6);
+            Bitboard blackKnightsStart = (1ULL << 57) | (1ULL << 62);
+
+            int whiteDevelopedKnights = __builtin_popcountll(pos.whiteKnights & whiteKnightsStart);
+            int blackDevelopedKnights = __builtin_popcountll(pos.blackKnights & blackKnightsStart);
+
+            // encourage BOTH knights staying or BOTH developing (avoid weird single knight pushes)
+            if (whiteDevelopedKnights == 1)
+                score -= 12;
+
+            if (blackDevelopedKnights == 1)
+                score += 12;
+
+            // punish early knight exposure in enemy half
+            forBits(pos.whiteKnights, [&](int sq)
+            {
+                int rank = sq / 8;
+                if (rank >= 4) score -= 10;
+            });
+
+            forBits(pos.blackKnights, [&](int sq)
+            {
+                int rank = sq / 8;
+                if (rank <= 3) score += 10;
+            });
         }
 
         return score;
