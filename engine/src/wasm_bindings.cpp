@@ -107,7 +107,7 @@ extern "C"
         if (g_moves.empty())
             return;
 
-        Move best = Search::findBestMove(g_pos, 3); // start with depth 3
+        Move best = Search::findBestMove(g_pos, 6); // seach at depth 6
 
         MoveMaker::makeMove(g_pos, best, g_undo);
 
@@ -182,7 +182,11 @@ extern "C"
     EMSCRIPTEN_KEEPALIVE
     int evaluatePosition()
     {
-        return Evaluate::evaluate(g_pos);
+        int score = Evaluate::evaluate(g_pos);
+
+        return (g_pos.sideToMove == WHITE)
+            ? score
+            : -score;
     }
 
     // -------------------------

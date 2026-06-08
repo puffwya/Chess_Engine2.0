@@ -687,6 +687,8 @@ CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.o: /Users/wyattpuff/Chess_Engi
   /Users/wyattpuff/Chess_Engine2.0/engine/include/bitboard.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/evaluate.h \
   /Users/wyattpuff/Chess_Engine2.0/engine/include/position.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/attack.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/include/position.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/alloca.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/bits/alltypes.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/bits/stdint.h \

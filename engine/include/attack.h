@@ -5,7 +5,9 @@
 class Attack
 {
 public:
-    static bool isSquareAttacked(const Position& pos, int square, Color attackerSide);
+    static bool isSquareAttacked(const Position& pos, int sq, Color attacker);
 
     static bool isKingInCheck(const Position& pos, Color side);
+
+    static int countSquareAttacks(const Position& pos, int sq, Color attacker);
 };

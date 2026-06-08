@@ -1,6 +1,7 @@
 #include "evaluate.h"
 #include <cstdint>
 #include <bit>
+#include "../include/attack.h"
 
 namespace
 {
@@ -10,7 +11,12 @@ namespace
     constexpr int ROOK_VALUE   = 500;
     constexpr int QUEEN_VALUE  = 900;
 
-    // --- Piece Square Tables (same idea as your old engine) ---
+    // Slightly more meaningful development bonus
+    constexpr int KNIGHT_DEVELOPED_BONUS = 20;
+    constexpr int BISHOP_DEVELOPED_BONUS = 15;
+
+    // IMPORTANT: toned down from your current version
+    constexpr int OVEREXPOSED_PENALTY = 6;
 
     constexpr int pawnPST[64] = {
          0,  0,  0,  0,  0,  0,  0,  0,
@@ -82,6 +88,17 @@ namespace
     {
         return (7 - (sq / 8)) * 8 + (sq % 8);
     }
+
+    template<typename Fn>
+    inline void forBits(Bitboard bb, Fn fn)
+    {
+        while (bb)
+        {
+            int sq = __builtin_ctzll(bb);
+            bb &= bb - 1;
+            fn(sq);
+        }
+    }
 }
 
 namespace Evaluate
@@ -90,36 +107,102 @@ namespace Evaluate
     {
         int score = 0;
 
-        auto evalPieces = [&](Bitboard bb, int pieceValue, const int* pst, bool white)
+        auto addPiece = [&](Bitboard bb, int value, const int* pst, bool white)
         {
-            while (bb)
+            forBits(bb, [&](int sq)
             {
-                int sq = __builtin_ctzll(bb);
-                bb &= bb - 1;
-
                 int tableSq = white ? sq : mirror(sq);
 
-                score += (white ? 1 : -1) * (pieceValue + pst[tableSq]);
-            }
+                score += (white ? 1 : -1) * (
+                    value + pst[tableSq] / 3
+                );
+            });
         };
 
-        evalPieces(pos.whitePawns,   PAWN_VALUE,   pawnPST,   true);
-        evalPieces(pos.blackPawns,   PAWN_VALUE,   pawnPST,   false);
+        // -------------------------
+        // MATERIAL + PST
+        // -------------------------
+        addPiece(pos.whitePawns,   PAWN_VALUE,   pawnPST,   true);
+        addPiece(pos.blackPawns,   PAWN_VALUE,   pawnPST,   false);
 
-        evalPieces(pos.whiteKnights, KNIGHT_VALUE, knightPST, true);
-        evalPieces(pos.blackKnights, KNIGHT_VALUE, knightPST, false);
+        addPiece(pos.whiteKnights, KNIGHT_VALUE, knightPST, true);
+        addPiece(pos.blackKnights, KNIGHT_VALUE, knightPST, false);
 
-        evalPieces(pos.whiteBishops, BISHOP_VALUE, bishopPST, true);
-        evalPieces(pos.blackBishops, BISHOP_VALUE, bishopPST, false);
+        addPiece(pos.whiteBishops, BISHOP_VALUE, bishopPST, true);
+        addPiece(pos.blackBishops, BISHOP_VALUE, bishopPST, false);
 
-        evalPieces(pos.whiteRooks,   ROOK_VALUE,   rookPST,   true);
-        evalPieces(pos.blackRooks,   ROOK_VALUE,   rookPST,   false);
+        addPiece(pos.whiteRooks,   ROOK_VALUE,   rookPST,   true);
+        addPiece(pos.blackRooks,   ROOK_VALUE,   rookPST,   false);
 
-        evalPieces(pos.whiteQueens,  QUEEN_VALUE,  queenPST,  true);
-        evalPieces(pos.blackQueens,  QUEEN_VALUE,  queenPST,  false);
+        addPiece(pos.whiteQueens,  QUEEN_VALUE,  queenPST,  true);
+        addPiece(pos.blackQueens,  QUEEN_VALUE,  queenPST,  false);
 
-        evalPieces(pos.whiteKing,    20000,        kingPST,   true);
-        evalPieces(pos.blackKing,    20000,        kingPST,   false);
+        addPiece(pos.whiteKing,    20000,        kingPST,   true);
+        addPiece(pos.blackKing,    20000,        kingPST,   false);
+
+        // -------------------------
+        // ATTACK EXPOSURE (SOFTENED)
+        // -------------------------
+        auto addExposurePenalty = [&](Bitboard bb, Color side)
+        {
+            forBits(bb, [&](int sq)
+            {
+                int attacks =
+                    Attack::countSquareAttacks(pos, sq,
+                        side == WHITE ? BLACK : WHITE);
+
+                if (attacks >= 2)
+                {
+                    int penalty = (attacks - 1) * OVEREXPOSED_PENALTY;
+
+                    score += (side == WHITE ? -penalty : penalty);
+                }
+            });
+        };
+
+        addExposurePenalty(pos.whiteKnights, WHITE);
+        addExposurePenalty(pos.whiteBishops, WHITE);
+        addExposurePenalty(pos.whiteRooks,   WHITE);
+        addExposurePenalty(pos.whiteQueens,  WHITE);
+
+        addExposurePenalty(pos.blackKnights, BLACK);
+        addExposurePenalty(pos.blackBishops, BLACK);
+        addExposurePenalty(pos.blackRooks,   BLACK);
+        addExposurePenalty(pos.blackQueens,  BLACK);
+
+        // -------------------------
+        // DEVELOPMENT (IMPROVED LOGIC)
+        // -------------------------
+        forBits(pos.whiteKnights, [&](int sq)
+        {
+            if (sq != 1 && sq != 6)
+                score += KNIGHT_DEVELOPED_BONUS;
+
+            // bonus for central squares
+            if (sq == 26 || sq == 27 || sq == 34 || sq == 35)
+                score += 10;
+        });
+
+        forBits(pos.blackKnights, [&](int sq)
+        {
+            if (sq != 57 && sq != 62)
+                score -= KNIGHT_DEVELOPED_BONUS;
+
+            if (sq == 26 || sq == 27 || sq == 34 || sq == 35)
+                score -= 10;
+        });
+
+        forBits(pos.whiteBishops, [&](int sq)
+        {
+            if (sq != 2 && sq != 5)
+                score += BISHOP_DEVELOPED_BONUS;
+        });
+
+        forBits(pos.blackBishops, [&](int sq)
+        {
+            if (sq != 58 && sq != 61)
+                score -= BISHOP_DEVELOPED_BONUS;
+        });
 
         return score;
     }

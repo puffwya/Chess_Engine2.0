@@ -127,4 +127,6 @@ CMakeFiles/chess_wasm.dir/engine/src/evaluate.cpp.o: \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/has_unique_object_representation.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_aggregate.h \
   /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/is_swappable.h \
-  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/negation.h
+  /Users/wyattpuff/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__type_traits/negation.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/src/../include/attack.h \
+  /Users/wyattpuff/Chess_Engine2.0/engine/src/../include/position.h
