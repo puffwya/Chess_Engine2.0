@@ -4,13 +4,25 @@
 #include "evaluate.h"
 
 #include <vector>
-#include <limits>
 #include <algorithm>
 
 static constexpr int INF = 100000;
 
 namespace
 {
+    constexpr int MAX_DEPTH = 64;
+
+    // -------------------------
+    // Killer moves (2 per depth)
+    // -------------------------
+    Move killer1[MAX_DEPTH];
+    Move killer2[MAX_DEPTH];
+
+    // -------------------------
+    // History heuristic table
+    // -------------------------
+    int history[64][64] = {0};
+
     static int pieceValueAt(const Position& pos, int sq)
     {
         Bitboard bb = 1ULL << sq;
@@ -25,38 +37,34 @@ namespace
         return 0;
     }
 
-    static int scoreMove(const Position& pos, const Move& m)
+    static int scoreMove(const Position& pos, const Move& m, int depth)
     {
         int score = 0;
 
-        // Promotions first
-        if (m.flags & PROMOTION)
-        {
-            score += 100000;
-
-            switch (m.promo)
-            {
-                case QUEEN:  score += 900; break;
-                case ROOK:   score += 500; break;
-                case BISHOP: score += 330; break;
-                case KNIGHT: score += 320; break;
-                default: break;
-            }
-        }
-
-        // MVV-LVA capture ordering
         if (m.flags & CAPTURE)
         {
             int victim   = pieceValueAt(pos, m.to);
             int attacker = pieceValueAt(pos, m.from);
-
             score += 10000 + victim - attacker;
         }
+
+        if (m.flags & PROMOTION)
+            score += 20000;
+
+        // killer move bonus
+        if (killer1[depth].from == m.from && killer1[depth].to == m.to)
+            score += 9000;
+
+        if (killer2[depth].from == m.from && killer2[depth].to == m.to)
+            score += 8000;
+
+        // history heuristic
+        score += history[m.from][m.to];
 
         return score;
     }
 
-    int negamax(Position& pos, int depth, int alpha, int beta)
+    int negamax(Position& pos, int depth, int alpha, int beta, int ply)
     {
         if (depth == 0)
             return Evaluate::evaluate(pos);
@@ -67,12 +75,10 @@ namespace
         if (moves.empty())
             return Evaluate::evaluate(pos);
 
-        std::sort(
-            moves.begin(),
-            moves.end(),
+        std::sort(moves.begin(), moves.end(),
             [&](const Move& a, const Move& b)
             {
-                return scoreMove(pos, a) > scoreMove(pos, b);
+                return scoreMove(pos, a, ply) > scoreMove(pos, b, ply);
             });
 
         int best = -INF;
@@ -84,16 +90,32 @@ namespace
 
             MoveMaker::makeMove(copy, m, undo);
 
-            int score = -negamax(copy, depth - 1, -beta, -alpha);
+            int score = -negamax(copy, depth - 1, -beta, -alpha, ply + 1);
 
             if (score > best)
                 best = score;
 
             if (score > alpha)
+            {
                 alpha = score;
 
+                // update history
+                history[m.from][m.to] += depth * depth;
+            }
+
             if (alpha >= beta)
+            {
+                // update killer moves (quiet moves only)
+                if (!(m.flags & CAPTURE))
+                {
+                    if (!(killer1[ply].from == m.from && killer1[ply].to == m.to))
+                    {
+                        killer2[ply] = killer1[ply];
+                        killer1[ply] = m;
+                    }
+                }
                 break;
+            }
         }
 
         return best;
@@ -107,12 +129,10 @@ namespace Search
         std::vector<Move> moves;
         MoveGenerator::generateMoves(pos, moves);
 
-        std::sort(
-            moves.begin(),
-            moves.end(),
+        std::sort(moves.begin(), moves.end(),
             [&](const Move& a, const Move& b)
             {
-                return scoreMove(pos, a) > scoreMove(pos, b);
+                return scoreMove(pos, a, 0) > scoreMove(pos, b, 0);
             });
 
         Move bestMove = moves[0];
@@ -125,7 +145,7 @@ namespace Search
 
             MoveMaker::makeMove(copy, m, undo);
 
-            int score = -negamax(copy, depth - 1, -INF, INF);
+            int score = -negamax(copy, depth - 1, -INF, INF, 0);
 
             if (score > bestScore)
             {

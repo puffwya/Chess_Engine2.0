@@ -2,12 +2,28 @@ let module;
 
 let selected = -1;
 let pendingPromotion = null;
+let isWhitePlayer = true;
 
 createModule().then(m => {
     module = m;
     module._initPosition();
     renderBoard();
 });
+
+const pieceImages = {
+  P: "pieces/wp.png",
+  N: "pieces/wn.png",
+  B: "pieces/wb.png",
+  R: "pieces/wr.png",
+  Q: "pieces/wq.png",
+  K: "pieces/wk.png",
+  p: "pieces/bp.png",
+  n: "pieces/bn.png",
+  b: "pieces/bb.png",
+  r: "pieces/br.png",
+  q: "pieces/bq.png",
+  k: "pieces/bk.png"
+};
 
 function pieceToLetter(piece) {
     switch (piece) {
@@ -33,20 +49,40 @@ function renderBoard() {
     const boardDiv = document.getElementById("board");
     boardDiv.innerHTML = "";
 
+    const flipped = isWhitePlayer;
+
     for (let i = 0; i < 64; i++) {
+
+        const file = i % 8;
+        const rank = Math.floor(i / 8);
+
+        const mappedRank = flipped ? (7 - rank) : rank;
+        const sqIndex = mappedRank * 8 + file;
+
         const sq = document.createElement("div");
 
+        const drawRank = Math.floor(sqIndex / 8);
+        const drawFile = sqIndex % 8;
+
         sq.className =
-            "sq " + ((Math.floor(i / 8) + i) % 2 ? "dark" : "light");
+            "sq " + ((drawRank + drawFile) % 2 ? "dark" : "light");
 
-        const piece = module._getPiece(i);
-        sq.innerText = pieceToLetter(piece);
+        const piece = module._getPiece(sqIndex);
+        const letter = pieceToLetter(piece);
 
-        if (i === selected) {
+        if (letter && pieceImages[letter]) {
+            const img = document.createElement("img");
+            img.src = pieceImages[letter];
+            img.className = "piece";
+            sq.appendChild(img);
+        }
+
+        // compare ENGINE square to ENGINE square
+        if (sqIndex === selected) {
             sq.style.outline = "2px solid yellow";
         }
 
-        sq.onclick = () => onSquare(i);
+        sq.onclick = () => onSquare(sqIndex);
 
         boardDiv.appendChild(sq);
     }

@@ -107,7 +107,7 @@ extern "C"
         if (g_moves.empty())
             return;
 
-        Move best = Search::findBestMove(g_pos, 6); // seach at depth 6
+        Move best = Search::findBestMove(g_pos, 3); // seach at depth 3
 
         MoveMaker::makeMove(g_pos, best, g_undo);
 
